@@ -1,0 +1,108 @@
+// ------------- Global Reset -----------------------
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+svg {
+  display: block;
+  height: auto;
+}
+
+canvas {
+  touch-action: pan-y;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+label {
+  display: block;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+::placeholder {
+  color: inherit;
+}
+
+sup {
+  font-size: 0.62em;
+  vertical-align: top;
+}
+textarea {
+  display: block;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+summary {
+  cursor: pointer;
+  list-style: none;
+  &::marker,
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+iframe {
+  border: none;
+  display: block;
+}
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  object-fit: cover;
+}
+
+:focus {
+  outline: none;
+}
+:focus-visible {
+  // Styles to create
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: clip;
+  min-width: 320px;
+  -webkit-tap-highlight-color: transparent;
+}
