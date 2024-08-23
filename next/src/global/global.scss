@@ -1,3 +1,24 @@
+// ------------- Global Variables -------------------
+
+:root {
+  --primary-100: #fcfcfc;
+  --primary-200: #efefef;
+  --primary-300: #cccccc;
+  --primary-600: #696969;
+  --primary-800: #070101;
+
+  --error: #a71e1e;
+
+  --success: #38a35c;
+
+  --visited: #503086;
+
+  --pageMargin: clamp(16px, calc(32vw / 7.68), 40px);
+  @media (max-width: 899px) and (min-width: 600px) {
+    --pageMargin: clamp(40px, calc(80vw / 7.68), 80px);
+  }
+}
+
 // ------------- Global Reset -----------------------
 
 *,
