@@ -1,11 +1,11 @@
 // ------------- Global Variables -------------------
 
 :root {
-  --primary-100: #fcfcfc;
-  --primary-200: #efefef;
-  --primary-300: #cccccc;
-  --primary-600: #696969;
-  --primary-800: #070101;
+  --neutral-100: #fcfcfc;
+  --neutral-200: #efefef;
+  --neutral-300: #cccccc;
+  --neutral-600: #696969;
+  --neutral-800: #070101;
 
   --error: #a71e1e;
 
@@ -122,8 +122,32 @@ html {
   scroll-behavior: smooth;
 }
 
+.max-width {
+  max-width: 1206px;
+  width: calc(100% - var(--pageMargin) * 2);
+  height: 100%;
+  margin: 0 auto;
+}
+
 body {
   overflow: clip;
   min-width: 320px;
   -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+  min-height: 100 vh;
+  color: var(--neutral-800, #070101);
+  background-color: var(--neutral-200, #efefef);
+  font-size: calc(16rem / 16);
+  line-height: 170%;
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+  line-height: 90%;
+  font-size: clamp(calc(32rem / 16), calc(40vw / 7.68), calc(40rem / 16));
+  letter-spacing: calc(0.4rem / 16);
+  font-variant: all-small-caps;
 }
