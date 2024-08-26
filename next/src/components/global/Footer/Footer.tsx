@@ -1,3 +1,5 @@
+import getLegalLinks from '@/utils/get-legal-links';
+import sanityFetch from '@/utils/sanity.fetch';
 import Logo from '@/components/ui/Logo';
 import SocialLink from '@/components/ui/SocialLink';
 import TextLink from '@/components/ui/TextLink';
@@ -5,7 +7,21 @@ import styles from './Footer.module.scss';
 
 const links = ['Tiktok', 'Instagram', 'Youtube'];
 
-export default function Footer() {
+type FooterSocialsTypes = { socialMedia: { _type: string; url: string }[] };
+
+async function fetchSocials(): Promise<FooterSocialsTypes> {
+  return await sanityFetch({
+    query: /* groq */ `
+     *[_id == 'global'][0].footer.socialMedia
+    `,
+    tags: ['global'],
+  });
+}
+
+export default async function Footer() {
+  const { termsAndConditions, privacyPolicy } = await getLegalLinks();
+  const socials = await fetchSocials();
+  console.log(socials);
   return (
     <footer className={`${styles.footer} max-width`}>
       <div className={styles.row}>
@@ -34,10 +50,10 @@ export default function Footer() {
         <div>
           <span className={styles.year}>{new Date().getFullYear()}</span>
           <div className={styles.links}>
-            <TextLink href='/example.com' target='_blank'>
+            <TextLink href={termsAndConditions} target='_blank'>
               Regulamin
             </TextLink>
-            <TextLink href='/example.com' target='_blank'>
+            <TextLink href={privacyPolicy} target='_blank'>
               Polityka Prywatności
             </TextLink>
           </div>
