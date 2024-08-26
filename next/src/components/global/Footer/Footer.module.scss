@@ -3,10 +3,12 @@
   padding: clamp(16px, calc(40vw / 7.68), 40px) 0 clamp(56px, calc(80px / 7.68), 80px);
   display: grid;
   row-gap: clamp(32px, calc(128vw / 7.68), 128px);
+
   .row {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     .socials {
       display: flex;
       align-items: center;
@@ -15,13 +17,16 @@
   }
 
   .legals {
-    .created {
-    }
-
-    .year {
-    }
+    color: var(--neutral-200, #efefef);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: calc(13rem / 16);
 
     .links {
+      display: flex;
+      align-items: center;
+      column-gap: clamp(16px, calc(64vw / 7.68), 64px);
     }
   }
 }

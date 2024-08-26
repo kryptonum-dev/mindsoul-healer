@@ -1,5 +1,6 @@
 import Logo from '@/components/ui/Logo';
 import SocialLink from '@/components/ui/SocialLink';
+import TextLink from '@/components/ui/TextLink';
 import styles from './Footer.module.scss';
 
 const links = ['Tiktok', 'Instagram', 'Youtube'];
@@ -24,14 +25,20 @@ export default function Footer() {
         </nav>
       </div>
       <div className={styles.legals}>
-        <p className={styles.created}>
+        <p>
           Stworzone przez
-          <a href='/https://kryptonum.eu/pl'>Kryptonum</a>
+          <TextLink target='_blank' href='https://kryptonum.eu/pl'>
+            Kryptonum
+          </TextLink>
         </p>
-        <span className={styles.year}>2024</span>
+        <span className={styles.year}>{new Date().getFullYear()}</span>
         <div className={styles.links}>
-          <a href='/example.com' className='link' target='_blank'></a>
-          <a href='/example.com' className='link' target='_blank'></a>
+          <TextLink href='/example.com' target='_blank'>
+            Regulamin
+          </TextLink>
+          <TextLink href='/example.com' target='_blank'>
+            Polityka Prywatności
+          </TextLink>
         </div>
       </div>
     </footer>
