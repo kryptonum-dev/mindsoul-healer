@@ -1,0 +1,17 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  > span {
+    height: 22px;
+    padding: 0 4px 3px;
+    text-transform: uppercase;
+    letter-spacing: calc(-1 * (0.24rem / 16));
+    font-variant: all-small-caps;
+    background-color: var(--neutral-200, #efefef);
+    display: block;
+    display: flex;
+    align-items: center;
+  }
+}

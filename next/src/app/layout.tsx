@@ -1,7 +1,15 @@
 import type { Metadata } from 'next';
 import { LOCALE } from '@/global/constants';
-import { GentiumPlus } from '@/global/fonts';
+import {
+  GentiumBoldTTF,
+  GentiumBoldWOFF,
+  GentiumBoldWOFF2,
+  GentiumRegularTTF,
+  GentiumRegularWOFF,
+  GentiumRegularWOFF2,
+} from '@/global/fonts';
 import '@/global/global.scss';
+import Header from '@/components/global/Header';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={LOCALE}>
-      <body className={GentiumPlus.className}>{children}</body>
+      <body
+        className={`${GentiumRegularTTF.variable} ${GentiumRegularWOFF.variable} ${GentiumRegularWOFF2.variable} ${GentiumBoldTTF.variable} ${GentiumBoldWOFF.variable}${GentiumBoldWOFF2.variable}`}
+      >
+        <Header />
+        <main id='main'>{children}</main>
+      </body>
     </html>
   );
 }
