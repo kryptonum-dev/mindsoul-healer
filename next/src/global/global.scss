@@ -111,7 +111,8 @@ img {
   outline: none;
 }
 :focus-visible {
-  // Styles to create
+  outline: 2px solid var(--neutral-600, #696969);
+  outline-offset: 5px;
 }
 
 html,
@@ -135,11 +136,15 @@ body {
   -webkit-tap-highlight-color: transparent;
   display: flex;
   flex-direction: column;
-  min-height: 100 vh;
+  min-height: 100vh;
   color: var(--neutral-800, #070101);
   background-color: var(--neutral-200, #efefef);
   font-size: calc(16rem / 16);
   line-height: 170%;
+  background-color: var(--neutral-800);
+  font-family: var(--font-gentiumRegularTTF);
+  font-family: var(--font-gentiumRegularWOFF);
+  font-family: var(--font-gentiumRegularWOFF2);
 }
 
 h1,
