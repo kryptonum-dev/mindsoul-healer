@@ -1,10 +1,25 @@
+import SectionHeading from '@/components/ui/SectionHeading';
+import CtaButtonBox from '@/components/ui/ctaButtonBox/ctaButtonBox';
+import Markdown from '@/components/ui/markdown';
 import styles from './HeroHeaderVideo.module.scss';
 import type { HeroHeaderVideoTypes } from './HeroHeaderVideo.types';
 
-export default function HeroHeaderVideo({  }: HeroHeaderVideoTypes) {
+export default function HeroHeaderVideo({
+  sectionHeading,
+  paragraph,
+  image,
+  videoId,
+  cta,
+  index,
+}: HeroHeaderVideoTypes) {
   return (
-    <div className={styles['HeroHeaderVideo']}>
-
-    </div>
+    <section className={styles.section}>
+      <header>
+        <SectionHeading {...sectionHeading} index={index} />
+        <Markdown>{paragraph}</Markdown>
+      </header>
+      <div>video</div>
+      <CtaButtonBox />
+    </section>
   );
 }
