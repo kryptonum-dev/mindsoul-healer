@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'seo',
@@ -13,7 +13,7 @@ export default defineType({
       description:
         'Tytuł strony, który jest ważny ze względów SEO. Pojawia się np. w pasku przeglądarki oraz w wyszukiwarkach internetowych.',
       validation: (Rule) => [
-        Rule.max(70).warning('Pole nie powinno być dłuższe niż 70 znaków.'),
+        Rule.max(160).warning('Pole nie powinno być dłuższe niż 70 znaków.'),
         Rule.required(),
       ],
     }),
