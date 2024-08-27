@@ -1,5 +1,5 @@
 import {defineField} from 'sanity'
-import {FaInstagram, FaYoutube, FaFacebook, FaTiktok, FaLinkedin} from 'react-icons/fa6'
+import {FaInstagram, FaYoutube, FaTiktok} from 'react-icons/fa6'
 
 export default defineField({
   name: 'socialMedia',
@@ -25,50 +25,6 @@ export default defineField({
           title: 'Instagram',
           subtitle: paragraph,
           icon: FaInstagram,
-        }),
-      },
-    }),
-    defineField({
-      name: 'facebook',
-      type: 'object',
-      title: 'Facebook',
-      fields: [
-        defineField({
-          name: 'url',
-          type: 'url',
-          title: 'Link',
-        }),
-      ],
-      preview: {
-        select: {
-          paragraph: 'url',
-        },
-        prepare: ({paragraph}) => ({
-          title: 'Facebook',
-          subtitle: paragraph,
-          icon: FaFacebook,
-        }),
-      },
-    }),
-    defineField({
-      name: 'linkedin',
-      type: 'object',
-      title: 'Linkedin',
-      fields: [
-        defineField({
-          name: 'url',
-          type: 'url',
-          title: 'Link',
-        }),
-      ],
-      preview: {
-        select: {
-          paragraph: 'url',
-        },
-        prepare: ({paragraph}) => ({
-          title: 'LinkedIn',
-          subtitle: paragraph,
-          icon: FaLinkedin,
         }),
       },
     }),
