@@ -151,13 +151,34 @@ main {
   flex-grow: 1;
 }
 
-h1,
-.h1,
-h2,
-.h2 {
-  line-height: 90%;
-  font-size: clamp(calc(32rem / 16), calc(40vw / 7.68), calc(40rem / 16));
-  letter-spacing: calc(0.4rem / 16);
-  font-variant: all-small-caps;
-  font-weight: 400;
+p {
+  margin-bottom: 12px;
+
+  &:last-child,
+  &:only-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.orderedList,
+.unorderedList {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+
+  &:last-child,
+  &:only-child {
+    margin-bottom: 0;
+  }
+}
+.unorderedList {
+  li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+
+    svg {
+      margin-top: 1px;
+    }
+  }
 }

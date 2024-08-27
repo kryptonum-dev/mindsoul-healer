@@ -25,13 +25,13 @@ export const GentiumBoldTTF = localFont({
 });
 
 export const GentiumBoldWOFF = localFont({
-  src: '../../public/fonts/GentiumPlus-Bold.ttf',
+  src: '../../public/fonts/GentiumPlus-Bold.woff',
   weight: '700',
   variable: '--font-gentiumBoldWOFF',
 });
 
 export const GentiumBoldWOFF2 = localFont({
-  src: '../../public/fonts/GentiumPlus-Bold.ttf',
+  src: '../../public/fonts/GentiumPlus-Bold.woff2',
   weight: '700',
   variable: '--font-gentiumBoldWOFF2',
 });

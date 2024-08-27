@@ -1,7 +1,30 @@
 .heading {
+  font-variant: all-small-caps;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-transform: uppercase;
+  font-weight: 400;
   .main {
+    font-size: clamp(calc(32rem / 16), calc(40vw / 7.68), calc(40rem / 16));
+    line-height: 90%;
+    letter-spacing: calc(0.4rem / 16);
+    margin-bottom: 8px;
+    &::first-letter {
+      background-color: var(--neutral-200, #f4f4f4);
+      color: var(--neutral-800, #070101);
+      padding: 0 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      float: left;
+      margin-right: 2px;
+    }
   }
 
   .sub {
+    font-size: clamp(calc(20rem / 16), calc(22vw / 7.68), calc(22rem / 16));
+    line-height: 120%;
+    letter-spacing: calc(1.76rem / 16);
   }
 }

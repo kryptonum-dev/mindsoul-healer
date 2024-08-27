@@ -13,13 +13,13 @@ export default function HeroHeaderVideo({
   index,
 }: HeroHeaderVideoTypes) {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} max-width`}>
       <header>
         <SectionHeading {...sectionHeading} index={index} />
         <Markdown>{paragraph}</Markdown>
       </header>
-      <div>video</div>
-      <CtaButtonBox />
+      {/* <div>video</div> */}
+      <CtaButtonBox {...cta} />
     </section>
   );
 }

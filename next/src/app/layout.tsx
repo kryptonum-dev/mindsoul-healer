@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang={LOCALE}>
       <body
-        className={`${GentiumRegularTTF.variable} ${GentiumRegularWOFF.variable} ${GentiumRegularWOFF2.variable} ${GentiumBoldTTF.variable} ${GentiumBoldWOFF.variable}${GentiumBoldWOFF2.variable}`}
+        className={`${GentiumRegularTTF.variable} ${GentiumRegularWOFF.variable} ${GentiumRegularWOFF2.variable} ${GentiumBoldTTF.variable} ${GentiumBoldWOFF.variable} ${GentiumBoldWOFF2.variable}`}
       >
         <Header />
         <main id='main'>{children}</main>
