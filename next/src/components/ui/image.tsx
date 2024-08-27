@@ -17,7 +17,7 @@ export type ImgDataTypes = {
   };
 };
 
-export type ImageTypes = (
+type ImageTypes = (
   | {
       data: ImgDataTypes;
       src?: never;
@@ -68,6 +68,7 @@ export default function Img({ data, src, width, height, alt, sizes, priority, ..
       alt={alt || ''}
       sizes={sizes}
       priority={priority}
+      loading={priority ? 'eager' : 'lazy'}
       {...((width! > 40 || height! > 40) && {
         blurDataURL: placeholder,
         placeholder: 'blur',

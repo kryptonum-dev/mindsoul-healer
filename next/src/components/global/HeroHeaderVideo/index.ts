@@ -9,10 +9,11 @@ export const HeroHeaderVideo_Query = /* groq */ `
     _type == "HeroHeaderVideo" => {
         sectionHeading,
         paragraph,
-        img {
-            ${ImgDataQuery}
+        image {
+        ${ImgDataQuery}
         },
         videoId,
+        authorName,
         cta,
     }
 `;

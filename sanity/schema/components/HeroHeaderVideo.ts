@@ -34,6 +34,13 @@ export default defineField({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'authorName',
+      type: 'markdown',
+      description: 'Imię i nazwisko autora pojawi się pod filmikiem wprowadzającym.',
+      title: 'Imię i nazwisko autora',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'cta',
       type: 'fullCtaBox',
       title: 'Wezwanie do działania',
