@@ -1,4 +1,4 @@
-import {defineField} from 'sanity'
+import { defineField } from 'sanity';
 
 export default defineField({
   name: 'sectionHeading',
@@ -9,7 +9,7 @@ export default defineField({
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'subheading',
@@ -17,4 +17,4 @@ export default defineField({
       title: 'Podnagłówek (Opcjonalny)',
     }),
   ],
-})
+});

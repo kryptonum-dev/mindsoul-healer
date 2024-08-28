@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'Index_Page',
@@ -12,7 +12,7 @@ export default defineType({
       title: 'Komponenty strony',
       description:
         'Komponenty podstrony to sekcje strony internetowej, które można dodawać, usuwać i zmieniać ich kolejność. Umożliwiają elastyczne zarządzanie treścią i układem strony.',
-      options: {collapsible: true},
+      options: { collapsible: true },
     }),
     defineField({
       name: 'seo',
@@ -27,4 +27,4 @@ export default defineType({
       title: 'SEO',
     },
   ],
-})
+});

@@ -1,8 +1,8 @@
-import {defineField} from 'sanity'
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown';
+import { defineField } from 'sanity';
 
-const title = 'Sekcja HERO z nagłówkiem i filmikiem'
-const icon = () => '⭐️'
+const title = 'Sekcja HERO z nagłówkiem i filmikiem';
+const icon = () => '⭐️';
 
 export default defineField({
   name: 'HeroHeaderVideo',
@@ -19,32 +19,32 @@ export default defineField({
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'image',
       type: 'imageAlt',
       title: 'Obraz',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'videoId',
       type: 'videoID',
       title: 'Filmik',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'authorName',
       type: 'markdown',
       description: 'Imię i nazwisko autora pojawi się pod filmikiem wprowadzającym.',
       title: 'Imię i nazwisko autora',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'cta',
       type: 'fullCtaBox',
       title: 'Wezwanie do działania',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     }),
   ],
   preview: {
@@ -52,10 +52,10 @@ export default defineField({
       heading: 'sectionHeading.heading',
       media: 'img',
     },
-    prepare: ({heading, media}) => ({
+    prepare: ({ heading, media }) => ({
       title: removeMarkdown(heading),
       subtitle: title,
       media,
     }),
   },
-})
+});

@@ -1,15 +1,11 @@
 import sanityFetch from './sanity.fetch';
 
-type getLegalLinkSTypes = {
+type getLegalLinksTypes = {
   privacyPolicy: string;
   termsAndConditions: string;
 };
 
-export default async function getLegalLinkS(): Promise<getLegalLinkSTypes> {
-  return await query();
-}
-
-async function query(): Promise<getLegalLinkSTypes> {
+export default async function getLegalLinks(): Promise<getLegalLinksTypes> {
   return await sanityFetch({
     query: /* groq */ `
       *[_id == 'global'][0] {

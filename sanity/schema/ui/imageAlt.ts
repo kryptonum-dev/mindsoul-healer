@@ -1,10 +1,10 @@
-import {defineField} from 'sanity'
+import { defineField } from 'sanity';
 
 export default defineField({
   name: 'imageAlt',
   title: 'Obraz',
   type: 'image',
-  validation: (Rule) => Rule.required(),
+  validation: Rule => Rule.required(),
   fields: [
     {
       title: 'Tekst Alternatywny',
@@ -16,4 +16,4 @@ export default defineField({
   options: {
     hotspot: true,
   },
-})
+});

@@ -1,10 +1,10 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'seo',
   title: 'SEO',
   type: 'object',
-  validation: (Rule) => Rule.required(),
+  validation: Rule => Rule.required(),
   fields: [
     defineField({
       name: 'title',
@@ -12,10 +12,7 @@ export default defineType({
       title: 'Tytuł',
       description:
         'Tytuł strony, który jest ważny ze względów SEO. Pojawia się np. w pasku przeglądarki oraz w wyszukiwarkach internetowych.',
-      validation: (Rule) => [
-        Rule.max(160).warning('Pole nie powinno być dłuższe niż 70 znaków.'),
-        Rule.required(),
-      ],
+      validation: Rule => [Rule.max(160).warning('Pole nie powinno być dłuższe niż 70 znaków.'), Rule.required()],
     }),
     defineField({
       name: 'description',
@@ -24,10 +21,7 @@ export default defineType({
       rows: 4,
       description:
         'Opis strony, który jest ważny ze względów SEO. Pojawia się np. w wyszukiwarkach internetowych oraz podczas udostępniania strony na mediach społecznościowych.',
-      validation: (Rule) => [
-        Rule.max(165).warning('Pole nie powinno być dłuższe niż 165 znaków.'),
-        Rule.required(),
-      ],
+      validation: Rule => [Rule.max(165).warning('Pole nie powinno być dłuższe niż 165 znaków.'), Rule.required()],
     }),
     defineField({
       name: 'img',
@@ -37,4 +31,4 @@ export default defineType({
         'Social Share Image to zdjęcie, które pojawia się np. podczas udostępniania linku w mediach społecznościowych. ',
     }),
   ],
-})
+});

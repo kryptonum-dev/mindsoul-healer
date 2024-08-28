@@ -1,13 +1,13 @@
-import {global} from './singleTypes/global'
-import seo from './components/seo'
-import Index_Page from './singleTypes/Index_Page'
-import socialMedia from './ui/socialMedia'
-import Content from '../components/Content'
-import sectionHeading from './ui/sectionHeading'
-import videoID from './ui/videoID'
-import fullCtaBox from './ui/fullCtaBox'
-import cta from './ui/cta'
-import imageAlt from './ui/imageAlt'
+import Content from '../components/Content';
+import seo from './components/seo';
+import Index_Page from './singleTypes/Index_Page';
+import { global } from './singleTypes/global';
+import cta from './ui/cta';
+import fullCtaBox from './ui/fullCtaBox';
+import imageAlt from './ui/imageAlt';
+import sectionHeading from './ui/sectionHeading';
+import socialMedia from './ui/socialMedia';
+import videoID from './ui/videoID';
 
 export const schemaTypes = [
   Index_Page,
@@ -20,4 +20,4 @@ export const schemaTypes = [
   fullCtaBox,
   cta,
   imageAlt,
-]
+];

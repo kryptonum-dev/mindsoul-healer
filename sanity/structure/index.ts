@@ -1,11 +1,11 @@
-import type {StructureResolver} from 'sanity/structure'
-import {createSingleton} from '../utils/create-singleton'
+import { createSingleton } from '../utils/create-singleton';
+import type { StructureResolver } from 'sanity/structure';
 
-export const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
-export const singletonTypes = new Set(['global'])
+export const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
+export const singletonTypes = new Set(['global']);
 
-export const structure: StructureResolver = (S) =>
+export const structure: StructureResolver = S =>
   S.list()
     .id('root')
     .title('Zawartość')
-    .items([createSingleton(S, 'global'), S.divider(), createSingleton(S, 'Index_Page')])
+    .items([createSingleton(S, 'global'), S.divider(), createSingleton(S, 'Index_Page')]);

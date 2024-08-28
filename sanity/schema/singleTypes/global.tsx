@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export const global = defineType({
   name: 'global',
@@ -10,14 +10,14 @@ export const global = defineType({
       name: 'footer',
       type: 'object',
       title: 'Stopka',
-      options: {collapsible: true, collapsed: true},
-      validation: (Rule) => Rule.required(),
+      options: { collapsible: true, collapsed: true },
+      validation: Rule => Rule.required(),
       fields: [
         defineField({
           name: 'socialMedia',
           type: 'socialMedia',
           title: 'Social Media',
-          validation: (Rule) => Rule.required(),
+          validation: Rule => Rule.required(),
         }),
       ],
     }),
@@ -25,19 +25,19 @@ export const global = defineType({
       name: 'privacyPolicy',
       type: 'url',
       title: 'Polityka Prywatności',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'termsAndConditions',
       type: 'url',
       title: 'Regulamin',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'email',
       type: 'string',
       title: 'Adres e-mail',
-      validation: (Rule) => Rule.required().email(),
+      validation: Rule => Rule.required().email(),
     }),
     defineField({
       name: 'tel',
@@ -48,52 +48,42 @@ export const global = defineType({
       name: 'socials',
       type: 'object',
       title: 'Social media (opcjonalnie)',
-      options: {collapsible: true, collapsed: true},
+      options: { collapsible: true, collapsed: true },
       fields: [
         defineField({
           name: 'facebook',
           type: 'url',
           title: 'Facebook',
-          validation: (Rule) =>
-            Rule.uri({scheme: ['https']}).error(
-              'Podaj prawidłowy adres URL (rozpoczynający się od https://)',
-            ),
+          validation: Rule =>
+            Rule.uri({ scheme: ['https'] }).error('Podaj prawidłowy adres URL (rozpoczynający się od https://)'),
         }),
         defineField({
           name: 'instagram',
           type: 'url',
           title: 'Instagram',
-          validation: (Rule) =>
-            Rule.uri({scheme: ['https']}).error(
-              'Podaj prawidłowy adres URL (rozpoczynający się od https://)',
-            ),
+          validation: Rule =>
+            Rule.uri({ scheme: ['https'] }).error('Podaj prawidłowy adres URL (rozpoczynający się od https://)'),
         }),
         defineField({
           name: 'youtube',
           type: 'url',
           title: 'YouTube',
-          validation: (Rule) =>
-            Rule.uri({scheme: ['https']}).error(
-              'Podaj prawidłowy adres URL (rozpoczynający się od https://)',
-            ),
+          validation: Rule =>
+            Rule.uri({ scheme: ['https'] }).error('Podaj prawidłowy adres URL (rozpoczynający się od https://)'),
         }),
         defineField({
           name: 'tiktok',
           type: 'url',
           title: 'TikTok',
-          validation: (Rule) =>
-            Rule.uri({scheme: ['https']}).error(
-              'Podaj prawidłowy adres URL (rozpoczynający się od https://)',
-            ),
+          validation: Rule =>
+            Rule.uri({ scheme: ['https'] }).error('Podaj prawidłowy adres URL (rozpoczynający się od https://)'),
         }),
         defineField({
           name: 'linkedin',
           type: 'url',
           title: 'LinkedIn',
-          validation: (Rule) =>
-            Rule.uri({scheme: ['https']}).error(
-              'Podaj prawidłowy adres URL (rozpoczynający się od https://)',
-            ),
+          validation: Rule =>
+            Rule.uri({ scheme: ['https'] }).error('Podaj prawidłowy adres URL (rozpoczynający się od https://)'),
         }),
       ],
     }),
@@ -117,9 +107,9 @@ export const global = defineType({
       title: 'Uporządkowane dane organizacji',
       description: (
         <a
-          href="https://developers.google.com/search/docs/appearance/structured-data/organization?hl=pl"
-          target="_blank"
-          rel="noreferrer"
+          href='https://developers.google.com/search/docs/appearance/structured-data/organization?hl=pl'
+          target='_blank'
+          rel='noreferrer'
         >
           Więcej informacji o Schema
         </a>
@@ -137,7 +127,7 @@ export const global = defineType({
           title: 'Opis Twojej organizacji',
         }),
       ],
-      options: {collapsible: true, collapsed: true},
+      options: { collapsible: true, collapsed: true },
     }),
   ],
   preview: {
@@ -145,4 +135,4 @@ export const global = defineType({
       title: 'Globalne ustawienia',
     }),
   },
-})
+});

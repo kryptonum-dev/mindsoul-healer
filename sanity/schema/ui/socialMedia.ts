@@ -1,5 +1,5 @@
-import {defineField} from 'sanity'
-import {FaInstagram, FaYoutube, FaTiktok} from 'react-icons/fa6'
+import { FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa6';
+import { defineField } from 'sanity';
 
 export default defineField({
   name: 'socialMedia',
@@ -21,7 +21,7 @@ export default defineField({
         select: {
           paragraph: 'url',
         },
-        prepare: ({paragraph}) => ({
+        prepare: ({ paragraph }) => ({
           title: 'Instagram',
           subtitle: paragraph,
           icon: FaInstagram,
@@ -43,7 +43,7 @@ export default defineField({
         select: {
           paragraph: 'url',
         },
-        prepare: ({paragraph}) => ({
+        prepare: ({ paragraph }) => ({
           title: 'YouTube',
           subtitle: paragraph,
           icon: FaYoutube,
@@ -65,7 +65,7 @@ export default defineField({
         select: {
           paragraph: 'url',
         },
-        prepare: ({paragraph}) => ({
+        prepare: ({ paragraph }) => ({
           title: 'TikTok',
           subtitle: paragraph,
           icon: FaTiktok,
@@ -73,5 +73,5 @@ export default defineField({
       },
     }),
   ],
-  validation: (Rule) => Rule.unique(),
-})
+  validation: Rule => Rule.unique(),
+});

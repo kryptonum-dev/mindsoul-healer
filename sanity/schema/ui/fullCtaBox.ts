@@ -1,11 +1,11 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'fullCtaBox',
   type: 'object',
   title: 'Wezwanie do działania',
   icon: () => '🗣️',
-  validation: (Rule) => Rule.required(),
+  validation: Rule => Rule.required(),
   fields: [
     defineField({
       name: 'paragraph',
@@ -16,7 +16,7 @@ export default defineType({
       name: 'ctaButton',
       type: 'ctaButton',
       title: 'Przycisk (CTA)',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     }),
   ],
   preview: {
@@ -25,4 +25,4 @@ export default defineType({
       subtitle: 'href',
     },
   },
-})
+});
