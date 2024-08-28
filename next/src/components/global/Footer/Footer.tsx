@@ -22,38 +22,40 @@ export default async function Footer() {
   const socials = await fetchSocials();
 
   return (
-    <footer className={`${styles.footer} max-width`}>
-      <div className={styles.row}>
-        <Logo />
-        <nav className={styles.socials}>
-          {socials.map(({ _type, url }, i) => (
-            <SocialLink
-              style={{ zIndex: `${20 - i}` }}
-              key={i}
-              href={url}
-              target='_blank'
-              aria-label={`Link do ${_type}`}
-              platform={_type}
-            />
-          ))}
-        </nav>
-      </div>
-      <div className={styles.legals}>
-        <p>
-          Stworzone przez
-          <TextLink target='_blank' href='https://kryptonum.eu/pl'>
-            Kryptonum
-          </TextLink>
-        </p>
-        <div>
-          <span className={styles.year}>{new Date().getFullYear()}</span>
-          <div className={styles.links}>
-            <TextLink href={termsAndConditions} target='_blank'>
-              Regulamin
+    <footer className={styles.footer}>
+      <div className='max-width'>
+        <div className={styles.row}>
+          <Logo />
+          <nav className={styles.socials}>
+            {socials.map(({ _type, url }, i) => (
+              <SocialLink
+                style={{ zIndex: `${20 - i}` }}
+                key={i}
+                href={url}
+                target='_blank'
+                aria-label={`Link do ${_type}`}
+                platform={_type}
+              />
+            ))}
+          </nav>
+        </div>
+        <div className={styles.legals}>
+          <p>
+            Stworzone przez
+            <TextLink target='_blank' href='https://kryptonum.eu/pl'>
+              Kryptonum
             </TextLink>
-            <TextLink href={privacyPolicy} target='_blank'>
-              Polityka Prywatności
-            </TextLink>
+          </p>
+          <div>
+            <span className={styles.year}>{new Date().getFullYear()}</span>
+            <div className={styles.links}>
+              <TextLink href={termsAndConditions} target='_blank'>
+                Regulamin
+              </TextLink>
+              <TextLink href={privacyPolicy} target='_blank'>
+                Polityka Prywatności
+              </TextLink>
+            </div>
           </div>
         </div>
       </div>

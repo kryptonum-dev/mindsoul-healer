@@ -15,15 +15,17 @@ export default function HeroHeaderVideo({
   index,
 }: HeroHeaderVideoTypes) {
   return (
-    <section className={`${styles.section} max-width`}>
-      <SectionHeading {...sectionHeading} index={index} />
-      <Markdown className={styles.paragraph}>{paragraph}</Markdown>
-      <div className={styles.box}>
-        <VideoBox image={image} videoId={videoId} PlayIcon={PlayIcon} index={index} />
-        <Markdown className={styles.author}>{authorName}</Markdown>
-      </div>
-      <div>
-        <CtaButtonBox {...cta} />
+    <section className={styles.section}>
+      <div className='max-width'>
+        <SectionHeading {...sectionHeading} index={index} />
+        <Markdown className={styles.paragraph}>{paragraph}</Markdown>
+        <div className={styles.box}>
+          <VideoBox image={image} videoId={videoId} PlayIcon={PlayIcon} index={index} />
+          <Markdown className={styles.author}>{authorName}</Markdown>
+        </div>
+        <div>
+          <CtaButtonBox {...cta} />
+        </div>
       </div>
     </section>
   );
