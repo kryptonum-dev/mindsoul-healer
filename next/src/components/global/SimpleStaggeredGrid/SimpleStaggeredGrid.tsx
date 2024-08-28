@@ -6,7 +6,6 @@ import type { SimpleStaggeredGridTypes } from './SimpleStaggeredGrid.types';
 
 export default function SimpleStaggeredGrid({ sectionHeading, imagesGrid, content, index }: SimpleStaggeredGridTypes) {
   const Heading = index === 0 ? Markdown.h2 : Markdown.h3;
-  console.log(imagesGrid);
   return (
     <section className={`${styles.section} max-width`}>
       <header>

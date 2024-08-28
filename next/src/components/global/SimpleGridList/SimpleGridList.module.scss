@@ -1,0 +1,111 @@
+.section {
+  padding: clamp(32px, calc(64vw / 7.68), 80px) 0 clamp(16px, calc(64vw / 7.68), 80px);
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+
+  header {
+    max-width: 484px;
+    flex-grow: 1;
+  }
+
+  .container {
+    background-color: var(--neutral-100, #fcfcfc);
+    padding: 16px;
+    position: relative;
+    max-width: 690px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    > img {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 1;
+      max-width: 310px;
+      width: calc(100% - 32px);
+    }
+    .box {
+      margin-top: 258px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      background-color: var(--neutral-200, #efefef);
+      max-width: 571px;
+      padding: 16px;
+
+      .list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        background-color: var(--neutral-300, #ccc);
+        .item {
+          background-color: var(--neutral-200, #efefef);
+          padding: 16px 12px;
+        }
+      }
+
+      .cta {
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+        row-gap: 12px;
+        justify-content: end;
+        flex-wrap: wrap;
+
+        .preCta {
+          font-weight: 700;
+          font-variant: all-small-caps;
+        }
+
+        a {
+          border: 1px solid var(--neutral-800, #ccc);
+          padding: 14px 32px;
+
+          &::before {
+            background-color: var(--neutral-800);
+          }
+
+          &:hover {
+            color: var(--neutral-100);
+          }
+
+          &:focus {
+            &::before {
+              background-color: var(--neutral-800);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+    header,
+    .container {
+      max-width: 608px;
+      align-self: center;
+
+      .box {
+        max-width: none;
+      }
+    }
+  }
+
+  @media (max-width: 469px) {
+    .container {
+      .box {
+        .list {
+          grid-template-columns: 1fr;
+        }
+
+        .cta {
+          justify-content: start;
+        }
+      }
+    }
+  }
+}

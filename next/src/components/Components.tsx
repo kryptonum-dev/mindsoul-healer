@@ -1,7 +1,12 @@
 import HeroHeaderVideo, { HeroHeaderVideoTypes, HeroHeaderVideo_Query } from './global/HeroHeaderVideo';
+import SimpleGridList, { SimpleGridListTypes, SimpleGridList_Query } from './global/SimpleGridList';
 import SimpleStaggeredGrid, { SimpleStaggeredGridTypes, SimpleStaggeredGrid_Query } from './global/SimpleStaggeredGrid';
 
-type componentsMapTypes = { HeroHeaderVideo: HeroHeaderVideoTypes; SimpleStaggeredGrid: SimpleStaggeredGridTypes };
+type componentsMapTypes = {
+  HeroHeaderVideo: HeroHeaderVideoTypes;
+  SimpleStaggeredGrid: SimpleStaggeredGridTypes;
+  SimpleGridList: SimpleGridListTypes;
+};
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string; index: number };
 
@@ -12,6 +17,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
     const componentsMapTypes: Record<string, React.ReactNode> = {
       HeroHeaderVideo: <HeroHeaderVideo {...(item as HeroHeaderVideoTypes)} />,
       SimpleStaggeredGrid: <SimpleStaggeredGrid {...(item as SimpleStaggeredGridTypes)} />,
+      SimpleGridList: <SimpleGridList {...(item as SimpleGridListTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -24,5 +30,6 @@ export const Components_Query = /* groq */ `
       _type,
       ${HeroHeaderVideo_Query}
       ${SimpleStaggeredGrid_Query}
+      ${SimpleGridList_Query}
     },
   `;

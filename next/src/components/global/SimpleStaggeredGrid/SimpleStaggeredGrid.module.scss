@@ -1,7 +1,6 @@
 .section {
   padding: clamp(32px, calc(64vw / 7.68), 80px) 0 clamp(16px, calc(64vw / 7.68), 80px);
   display: grid;
-  grid-template-columns: repeat(2, max-content);
   grid-template-columns: repeat(2, auto);
 
   header {
@@ -49,10 +48,12 @@
           background-color: var(--neutral-100, #fcfcfc);
           color: var(--neutral-800, #070101);
         }
+
         img {
           width: 100%;
           height: auto;
         }
+
         .boxText {
           padding: 16px 12px 12px;
         }

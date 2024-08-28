@@ -19,5 +19,5 @@ _type == "SimpleStaggeredGrid" => {
         bottomParagraph,
     },
     content,
-}
+},
 `;
