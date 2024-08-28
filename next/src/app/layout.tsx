@@ -9,6 +9,7 @@ import {
   GentiumRegularWOFF2,
 } from '@/global/fonts';
 import '@/global/global.scss';
+import Footer from '@/components/global/Footer';
 import Header from '@/components/global/Header';
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function RootLayout({
       >
         <Header />
         <main id='main'>{children}</main>
+        <Footer />
       </body>
     </html>
   );
