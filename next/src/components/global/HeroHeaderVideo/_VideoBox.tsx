@@ -22,7 +22,7 @@ export default function VideoBox({ image, videoId, PlayIcon, index }: VideoBoxTy
           setShowPlayButton(false);
         }}
       >
-        <Img data={image} sizes='' priority={index === 0} />
+        <Img data={image} sizes='(max-width: 659px) 328px, 381px' priority={index === 0} />
         <div className={styles.play} aria-hidden={!showPlayButton}>
           {PlayIcon}
         </div>
@@ -35,7 +35,7 @@ export default function VideoBox({ image, videoId, PlayIcon, index }: VideoBoxTy
             src={`https://player.vimeo.com/video/${videoId}?h=8f0ffe497b&title=0&byline=0&loop=1&portrait=0&dnt=1&autoplay=1`}
             allow='autoplay; fullscreen'
           ></iframe>
-          <div className={styles.loader}>
+          <div className='loader'>
             <div />
           </div>
         </div>

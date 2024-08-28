@@ -14,13 +14,10 @@ export default function HeroHeaderVideo({
   authorName,
   index,
 }: HeroHeaderVideoTypes) {
-  console.log(image);
   return (
     <section className={`${styles.section} max-width`}>
-      <header>
-        <SectionHeading {...sectionHeading} index={index} />
-        <Markdown>{paragraph}</Markdown>
-      </header>
+      <SectionHeading {...sectionHeading} index={index} />
+      <Markdown className={styles.paragraph}>{paragraph}</Markdown>
       <div className={styles.box}>
         <VideoBox image={image} videoId={videoId} PlayIcon={PlayIcon} index={index} />
         <Markdown className={styles.author}>{authorName}</Markdown>
