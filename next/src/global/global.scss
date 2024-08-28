@@ -1,3 +1,24 @@
+// ------------- Global Variables -------------------
+
+:root {
+  --neutral-100: #fcfcfc;
+  --neutral-200: #efefef;
+  --neutral-300: #cccccc;
+  --neutral-600: #696969;
+  --neutral-800: #070101;
+
+  --error: #a71e1e;
+
+  --success: #38a35c;
+
+  --visited: #503086;
+
+  --pageMargin: clamp(16px, calc(32vw / 7.68), 40px);
+  @media (max-width: 899px) and (min-width: 600px) {
+    --pageMargin: clamp(40px, calc(80vw / 7.68), 80px);
+  }
+}
+
 // ------------- Global Reset -----------------------
 
 *,
@@ -90,7 +111,8 @@ img {
   outline: none;
 }
 :focus-visible {
-  // Styles to create
+  outline: 2px solid var(--neutral-600, #696969);
+  outline-offset: 5px;
 }
 
 html,
@@ -101,8 +123,36 @@ html {
   scroll-behavior: smooth;
 }
 
+.max-width {
+  max-width: 1206px;
+  width: calc(100% - var(--pageMargin) * 2);
+  height: 100%;
+  margin: 0 auto;
+}
+
 body {
   overflow: clip;
   min-width: 320px;
   -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--neutral-800, #070101);
+  background-color: var(--neutral-200, #efefef);
+  font-size: calc(16rem / 16);
+  line-height: 170%;
+  background-color: var(--neutral-800);
+  font-family: var(--font-gentiumRegularTTF);
+  font-family: var(--font-gentiumRegularWOFF);
+  font-family: var(--font-gentiumRegularWOFF2);
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+  line-height: 90%;
+  font-size: clamp(calc(32rem / 16), calc(40vw / 7.68), calc(40rem / 16));
+  letter-spacing: calc(0.4rem / 16);
+  font-variant: all-small-caps;
 }
