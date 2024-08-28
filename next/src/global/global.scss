@@ -11,8 +11,6 @@
 
   --success: #38a35c;
 
-  --visited: #503086;
-
   --pageMargin: clamp(16px, calc(32vw / 7.68), 40px);
   @media (max-width: 899px) and (min-width: 600px) {
     --pageMargin: clamp(40px, calc(80vw / 7.68), 80px);

@@ -8,7 +8,7 @@
   .main {
     font-size: clamp(calc(32rem / 16), calc(40vw / 7.68), calc(40rem / 16));
     line-height: 90%;
-    letter-spacing: calc(0.4rem / 16);
+    letter-spacing: 0.025em;
     margin-bottom: 8px;
     &::first-letter {
       background-color: var(--neutral-200, #f4f4f4);
@@ -25,6 +25,6 @@
   .sub {
     font-size: clamp(calc(20rem / 16), calc(22vw / 7.68), calc(22rem / 16));
     line-height: 120%;
-    letter-spacing: calc(1.76rem / 16);
+    letter-spacing: 0.11em;
   }
 }
