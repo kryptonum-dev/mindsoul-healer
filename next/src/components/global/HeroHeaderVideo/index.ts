@@ -15,5 +15,5 @@ export const HeroHeaderVideo_Query = /* groq */ `
         videoId,
         authorName,
         cta,
-    }
+    },
 `;

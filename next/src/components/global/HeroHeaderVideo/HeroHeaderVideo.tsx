@@ -17,7 +17,7 @@ export default function HeroHeaderVideo({
   return (
     <section className={styles.section}>
       <div className='max-width'>
-        <SectionHeading {...sectionHeading} index={index} />
+        <SectionHeading {...sectionHeading} index={index} dark />
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>
         <div className={styles.box}>
           <VideoBox image={image} videoId={videoId} PlayIcon={PlayIcon} index={index} />
