@@ -1,13 +1,6 @@
 import type { Metadata } from 'next';
 import { LOCALE } from '@/global/constants';
-import {
-  GentiumBoldTTF,
-  GentiumBoldWOFF,
-  GentiumBoldWOFF2,
-  GentiumRegularTTF,
-  GentiumRegularWOFF,
-  GentiumRegularWOFF2,
-} from '@/global/fonts';
+import { Gentium } from '@/global/fonts';
 import '@/global/global.scss';
 import Footer from '@/components/global/Footer';
 import Header from '@/components/global/Header';
@@ -24,9 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={LOCALE}>
-      <body
-        className={`${GentiumRegularTTF.variable} ${GentiumRegularWOFF.variable} ${GentiumRegularWOFF2.variable} ${GentiumBoldTTF.variable} ${GentiumBoldWOFF.variable} ${GentiumBoldWOFF2.variable}`}
-      >
+      <body className={Gentium.variable}>
         <Header />
         <main id='main'>{children}</main>
         <Footer />
