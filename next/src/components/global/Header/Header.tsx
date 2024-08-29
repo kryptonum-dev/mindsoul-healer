@@ -8,7 +8,9 @@ export default function Header() {
         Przejdź do głównej treści
       </a>
       <header className={styles.header}>
-        <Logo />
+        <div>
+          <Logo />
+        </div>
       </header>
     </>
   );

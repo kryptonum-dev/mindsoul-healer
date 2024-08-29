@@ -1,5 +1,5 @@
 import Button from '@/components/ui/Button';
-import SectionHeading from '@/components/ui/SectionHeading';
+import Heading from '@/components/ui/Heading';
 import Img from '@/components/ui/image';
 import Markdown from '@/components/ui/markdown';
 import styles from './SimpleGridList.module.scss';
@@ -9,10 +9,10 @@ export default function SimpleGridList({ sectionHeading, list, image, preCtaText
   return (
     <section className={`${styles.section} max-width`}>
       <header>
-        <SectionHeading {...sectionHeading} index={index} />
+        <Heading {...sectionHeading} hierarchy={index === 0 ? 'h1' : 'h2'} />
       </header>
       <div className={styles.container}>
-        <Img data={image} sizes='' />
+        <Img data={image} sizes='(max-width: 376px) 85vw, 310px' />
         <div className={styles.box}>
           <ul className={styles.list}>
             {list.map((paragraph, i) => (

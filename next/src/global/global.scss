@@ -11,6 +11,8 @@
 
   --success: #38a35c;
 
+  --easing: cubic-bezier(0.11, 0, 0.5, 0);
+
   --pageMargin: clamp(16px, calc(32vw / 7.68), 40px);
   @media (max-width: 899px) and (min-width: 600px) {
     --pageMargin: clamp(40px, calc(80vw / 7.68), 80px);

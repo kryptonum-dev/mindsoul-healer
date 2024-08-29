@@ -1,4 +1,4 @@
-import SectionHeading from '@/components/ui/SectionHeading';
+import Heading from '@/components/ui/Heading';
 import CtaButtonBox from '@/components/ui/ctaButtonBox/ctaButtonBox';
 import Markdown from '@/components/ui/markdown';
 import styles from './HeroHeaderVideo.module.scss';
@@ -17,7 +17,7 @@ export default function HeroHeaderVideo({
   return (
     <section className={styles.section}>
       <div className='max-width'>
-        <SectionHeading {...sectionHeading} index={index} dark />
+        <Heading {...sectionHeading} dark hierarchy={index === 0 ? 'h1' : 'h2'} />
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>
         <div className={styles.box}>
           <VideoBox image={image} videoId={videoId} PlayIcon={PlayIcon} index={index} />

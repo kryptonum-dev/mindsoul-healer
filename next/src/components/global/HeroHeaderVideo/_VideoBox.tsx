@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Img from '@/components/ui/image';
 import styles from './HeroHeaderVideo.module.scss';
-import { VideoBoxTypes } from './HeroHeaderVideo.types';
+import type { VideoBoxTypes } from './HeroHeaderVideo.types';
 
 export default function VideoBox({ image, videoId, PlayIcon, index }: VideoBoxTypes) {
   const [isOpen, setIsOpen] = useState<boolean>(false);

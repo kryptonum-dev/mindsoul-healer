@@ -1,15 +1,15 @@
-import SectionHeading from '@/components/ui/SectionHeading';
+import Heading from '@/components/ui/Heading';
 import Img from '@/components/ui/image';
 import Markdown from '@/components/ui/markdown';
 import styles from './SimpleStaggeredGrid.module.scss';
 import type { SimpleStaggeredGridTypes } from './SimpleStaggeredGrid.types';
 
 export default function SimpleStaggeredGrid({ sectionHeading, imagesGrid, content, index }: SimpleStaggeredGridTypes) {
-  const Heading = index === 0 ? Markdown.h2 : Markdown.h3;
+  const SubHeading = index === 0 ? Markdown.h2 : Markdown.h3;
   return (
     <section className={`${styles.section} max-width`}>
       <header>
-        <SectionHeading {...sectionHeading} index={index} />
+        <Heading {...sectionHeading} hierarchy={index === 0 ? 'h1' : 'h2'} />
       </header>
       <div className={styles.columns}>
         {imagesGrid.map(({ topParagraph, bottomParagraph, imageContainer }, i) => (
@@ -21,7 +21,10 @@ export default function SimpleStaggeredGrid({ sectionHeading, imagesGrid, conten
               </div>
             )}
             <div className={styles.box}>
-              <Img data={imageContainer.image} sizes='' />
+              <Img
+                data={imageContainer.image}
+                sizes='(max-width: 389px) 98vw, (max-width: 469px) 360px, (max-width: 599px) 45vw, (max-width: 767px) 40vw, (max-width: 1023px) 298px, (max-width: 1199px) 24vw, 287px'
+              />
               <Markdown className={styles.boxText}>{imageContainer.imageText}</Markdown>
             </div>
             {!!bottomParagraph && (
@@ -34,7 +37,7 @@ export default function SimpleStaggeredGrid({ sectionHeading, imagesGrid, conten
         ))}
       </div>
       <div className={styles.content}>
-        <Heading>{content.title}</Heading>
+        <SubHeading>{content.title}</SubHeading>
         <Markdown className={styles.text}>{content.paragraph}</Markdown>
       </div>
     </section>

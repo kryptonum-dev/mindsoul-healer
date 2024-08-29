@@ -11,15 +11,11 @@
     line-height: 90%;
     letter-spacing: 0.025em;
     margin-bottom: 8px;
+
     &::first-letter {
-      color: var();
-      padding: 0px 3px;
-      display: inline-flex;
-      vertical-align: text-top; /* Align the top of the first letter with the rest of the text */
-      align-items: center;
-      justify-content: center;
-      float: left;
+      padding: 0px 4px;
       margin-right: 2px;
+      float: left;
       background-color: var(--neutral-800, #070101);
       color: var(--neutral-200, #efefef);
     }

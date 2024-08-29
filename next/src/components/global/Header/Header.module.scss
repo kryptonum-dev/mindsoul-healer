@@ -22,10 +22,14 @@
   z-index: 100;
   top: 0;
   left: 0;
-  width: 100vw;
-  padding: 12px clamp(16px, calc(32vw / 7.68), 32px);
-  display: flex;
-  justify-content: start;
-  background-color: var(--neutral-800, #070101);
-  padding: 12px calc((100vw - 1302px) / 2);
+  width: 100%;
+  background-color: rgba(#070101, 0.95);
+
+  > div {
+    padding: 12px clamp(16px, calc(28vw / 7.68), 32px);
+    max-width: 1366px;
+    display: flex;
+    justify-content: start;
+    margin: 0 auto;
+  }
 }

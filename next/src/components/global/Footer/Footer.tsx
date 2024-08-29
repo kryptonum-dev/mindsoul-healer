@@ -1,6 +1,6 @@
 import getLegalLinks from '@/utils/get-legal-links';
 import sanityFetch from '@/utils/sanity.fetch';
-import { PlatformType } from '@/global/types';
+import type { PlatformType } from '@/global/types';
 import Logo from '@/components/ui/Logo';
 import SocialLink from '@/components/ui/SocialLink';
 import TextLink from '@/components/ui/TextLink';
