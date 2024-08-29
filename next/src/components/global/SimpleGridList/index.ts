@@ -13,5 +13,5 @@ export const SimpleGridList_Query = /* groq */ `
         list,
         preCtaText,
         cta,
-    }
+    },
 `;

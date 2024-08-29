@@ -1,8 +1,8 @@
-import { SectionHeadingTypes } from '@/components/ui/SectionHeading';
+import { HeadingTypes } from '@/components/ui/Heading';
 import { ImgDataTypes } from '@/components/ui/image';
 
 export type SimpleStaggeredGridTypes = {
-  sectionHeading: SectionHeadingTypes;
+  sectionHeading: HeadingTypes;
   imagesGrid: {
     topParagraph: string;
     imageContainer: { image: ImgDataTypes; imageText: string };

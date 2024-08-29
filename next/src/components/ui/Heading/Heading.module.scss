@@ -8,14 +8,13 @@
 
   .main {
     font-size: clamp(calc(32rem / 16), calc(40vw / 7.68), calc(40rem / 16));
-    line-height: 90%;
+    line-height: 100%;
     letter-spacing: 0.025em;
     margin-bottom: 8px;
 
     &::first-letter {
       padding: 0px 4px;
       margin-right: 2px;
-      float: left;
       background-color: var(--neutral-800, #070101);
       color: var(--neutral-200, #efefef);
     }

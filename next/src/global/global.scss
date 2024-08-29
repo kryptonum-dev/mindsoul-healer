@@ -157,6 +157,11 @@ p {
   }
 }
 
+strong {
+  font-variant: all-small-caps;
+  text-transform: uppercase;
+}
+
 .orderedList,
 .unorderedList {
   display: grid;
