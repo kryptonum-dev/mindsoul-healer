@@ -1,14 +1,24 @@
 import { Fragment } from 'react';
+import getLegalLinks from '@/utils/get-legal-links';
 import Heading from '@/components/ui/Heading';
 import CtaButtonBox from '@/components/ui/ctaButtonBox/ctaButtonBox';
 import Img from '@/components/ui/image';
 import Markdown from '@/components/ui/markdown';
 import styles from './ModuleList.module.scss';
 import type { ModuleListTypes } from './ModuleList.types';
+import Form from './_Form';
 
-// import Form from './_Form';
+export default async function ModuleList({
+  sectionHeading,
+  paragraph,
+  image,
+  list,
+  form,
+  cta,
+  index,
+}: ModuleListTypes) {
+  const { privacyPolicy } = await getLegalLinks();
 
-export default function ModuleList({ sectionHeading, paragraph, image, list, form, cta, index }: ModuleListTypes) {
   const Subheading = index === 0 ? 'h2' : 'h3';
   return (
     <section className={styles.section}>
@@ -41,7 +51,20 @@ export default function ModuleList({ sectionHeading, paragraph, image, list, for
                         <BulletList />
                         <span>{name}</span>
                       </li>
-                      {/* {moduleIndex === 0 && lessonIndex === 0 && <Form />} */}
+                      {moduleIndex === 0 && lessonIndex === 0 && (
+                        <Form
+                          {...form}
+                          index={index}
+                          privacyPolicy={privacyPolicy}
+                          heading={
+                            index === 0 ? (
+                              <Markdown.h3>{form.formHeading}</Markdown.h3>
+                            ) : (
+                              <Markdown.h4>{form.formHeading}</Markdown.h4>
+                            )
+                          }
+                        />
+                      )}
                     </Fragment>
                   ))}
                 </ul>
