@@ -1,4 +1,5 @@
 import Content from '../components/Content';
+import Module_Collection from './collectionTypes/Module_Collection';
 import seo from './components/seo';
 import Index_Page from './singleTypes/Index_Page';
 import { global } from './singleTypes/global';
@@ -20,4 +21,5 @@ export const schemaTypes = [
   fullCtaBox,
   cta,
   imageAlt,
+  Module_Collection,
 ];

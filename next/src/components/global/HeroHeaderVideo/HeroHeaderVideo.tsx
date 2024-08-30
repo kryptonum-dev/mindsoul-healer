@@ -24,7 +24,7 @@ export default function HeroHeaderVideo({
           <Markdown className={styles.author}>{authorName}</Markdown>
         </div>
         <div>
-          <CtaButtonBox {...cta} />
+          <CtaButtonBox {...cta} dark />
         </div>
       </div>
     </section>

@@ -50,12 +50,12 @@ export default defineField({
   preview: {
     select: {
       heading: 'sectionHeading.heading',
-      media: 'img',
+      icon: 'icon',
     },
-    prepare: ({ heading, media }) => ({
+    prepare: ({ heading, icon }) => ({
       title: removeMarkdown(heading),
       subtitle: title,
-      media,
+      media: icon,
     }),
   },
 });
