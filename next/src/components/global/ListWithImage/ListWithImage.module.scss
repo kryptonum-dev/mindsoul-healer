@@ -13,6 +13,15 @@
     column-gap: 48px;
     background-color: var(--neutral-200, #efefef);
 
+    p {
+      margin-bottom: 16px;
+
+      &:last-child,
+      &:only-of-type {
+        margin-bottom: 0;
+      }
+    }
+
     header {
       width: calc(100% - 32px);
       padding: 36px 0;

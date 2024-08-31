@@ -18,10 +18,10 @@ export default function FormState({
           <span className={styles.loader}></span>
         ) : (
           <>
-            {!isSuccess ? <SuccessIcon /> : <ErrorIcon />}
-            <Heading className={styles.heading}>{!isSuccess ? successState.heading : errorState.heading}</Heading>
-            <p>{!isSuccess ? successState.paragraph : errorState.paragraph}</p>
-            {isSuccess !== false && (
+            {isSuccess ? <SuccessIcon /> : <ErrorIcon />}
+            <Heading className={styles.heading}>{isSuccess ? successState.heading : errorState.heading}</Heading>
+            <p>{isSuccess ? successState.paragraph : errorState.paragraph}</p>
+            {isSuccess === false && (
               <>
                 <Button
                   type='button'

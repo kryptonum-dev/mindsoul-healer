@@ -1,3 +1,4 @@
+import AboutAuthor from '../schema/components/AboutAuthor';
 import HeroHeaderVideo from '../schema/components/HeroHeaderVideo';
 import ListWithImage from '../schema/components/ListWithImage';
 import ModuleList from '../schema/components/ModuleList';
@@ -10,5 +11,13 @@ export default defineType({
   name: 'content',
   type: 'array',
   title: 'Komponenty',
-  of: [HeroHeaderVideo, SimpleStaggeredGrid, SimpleGridList, ListWithImage, ModuleList, PurchaseCtaSection],
+  of: [
+    HeroHeaderVideo,
+    SimpleStaggeredGrid,
+    SimpleGridList,
+    ListWithImage,
+    ModuleList,
+    PurchaseCtaSection,
+    AboutAuthor,
+  ],
 });

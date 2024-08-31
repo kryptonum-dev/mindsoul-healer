@@ -12,5 +12,5 @@ export const PurchaseCtaSection_Query = /* groq */ `
         sectionHeading,
         paragraph,
         cta,
-    }
+    },
 `;
