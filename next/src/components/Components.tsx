@@ -1,4 +1,5 @@
 import AboutAuthor, { AboutAuthorTypes, AboutAuthor_Query } from './global/AboutAuthor';
+import HeadingWithColumns, { HeadingWithColumnsTypes, HeadingWithColumns_Query } from './global/HeadingWithColumns';
 import HeroHeaderVideo, { HeroHeaderVideoTypes, HeroHeaderVideo_Query } from './global/HeroHeaderVideo';
 import ListWithImage, { ListWithImageTypes, ListWithImage_Query } from './global/ListWithImage';
 import ModuleList, { ModuleListTypes, ModuleList_Query } from './global/ModuleList';
@@ -14,6 +15,7 @@ type componentsMapTypes = {
   ModuleList: ModuleListTypes;
   PurchaseCtaSection: PurchaseCtaSectionTypes;
   AboutAuthor: AboutAuthorTypes;
+  HeadingWithColumns: HeadingWithColumnsTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string; index: number };
@@ -30,6 +32,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       ModuleList: <ModuleList {...(item as ModuleListTypes)} />,
       PurchaseCtaSection: <PurchaseCtaSection {...(item as PurchaseCtaSectionTypes)} />,
       AboutAuthor: <AboutAuthor {...(item as AboutAuthorTypes)} />,
+      HeadingWithColumns: <HeadingWithColumns {...(item as HeadingWithColumnsTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -47,5 +50,6 @@ export const Components_Query = /* groq */ `
       ${ModuleList_Query}
       ${PurchaseCtaSection_Query}
       ${AboutAuthor_Query}
+      ${HeadingWithColumns_Query}
     },
   `;

@@ -1,4 +1,5 @@
 import AboutAuthor from '../schema/components/AboutAuthor';
+import HeadingWithColumns from '../schema/components/HeadingWithColumns';
 import HeroHeaderVideo from '../schema/components/HeroHeaderVideo';
 import ListWithImage from '../schema/components/ListWithImage';
 import ModuleList from '../schema/components/ModuleList';
@@ -19,5 +20,6 @@ export default defineType({
     ModuleList,
     PurchaseCtaSection,
     AboutAuthor,
+    HeadingWithColumns,
   ],
 });
