@@ -1,6 +1,7 @@
 import HeroHeaderVideo, { HeroHeaderVideoTypes, HeroHeaderVideo_Query } from './global/HeroHeaderVideo';
 import ListWithImage, { ListWithImageTypes, ListWithImage_Query } from './global/ListWithImage';
 import ModuleList, { ModuleListTypes, ModuleList_Query } from './global/ModuleList';
+import PurchaseCtaSection, { PurchaseCtaSectionTypes, PurchaseCtaSection_Query } from './global/PurchaseCtaSection';
 import SimpleGridList, { SimpleGridListTypes, SimpleGridList_Query } from './global/SimpleGridList';
 import SimpleStaggeredGrid, { SimpleStaggeredGridTypes, SimpleStaggeredGrid_Query } from './global/SimpleStaggeredGrid';
 
@@ -10,6 +11,7 @@ type componentsMapTypes = {
   SimpleGridList: SimpleGridListTypes;
   ListWithImage: ListWithImageTypes;
   ModuleList: ModuleListTypes;
+  PurchaseCtaSection: PurchaseCtaSectionTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string; index: number };
@@ -24,6 +26,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       SimpleGridList: <SimpleGridList {...(item as SimpleGridListTypes)} />,
       ListWithImage: <ListWithImage {...(item as ListWithImageTypes)} />,
       ModuleList: <ModuleList {...(item as ModuleListTypes)} />,
+      PurchaseCtaSection: <PurchaseCtaSection {...(item as PurchaseCtaSectionTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -39,5 +42,6 @@ export const Components_Query = /* groq */ `
       ${SimpleGridList_Query}
       ${ListWithImage_Query}
       ${ModuleList_Query}
+      ${PurchaseCtaSection_Query}
     },
   `;

@@ -22,5 +22,5 @@ export const ModuleList_Query = /* groq */ `
             buttonText,
         },
         cta,
-    }
+    },
 `;
