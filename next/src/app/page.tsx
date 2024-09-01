@@ -1,5 +1,10 @@
 import sanityFetch from '@/utils/sanity.fetch';
+import { QueryMetadata } from '@/global/seo/query-metadata';
 import Components, { ComponentTypes, Components_Query } from '@/components/Components';
+
+export async function generateMetadata() {
+  return await QueryMetadata({ name: 'Index_Page', path: '' });
+}
 
 const query = async (): Promise<{ content: ComponentTypes[] }> => {
   return await sanityFetch({
