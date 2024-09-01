@@ -1,12 +1,14 @@
+import { url } from 'inspector';
 import NextImage from 'next/image';
 
 const defaultPlaceholder =
   'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMUltCqBwABcQDWMIsO5gAAAABJRU5ErkJggg==';
 
 export type ImgDataTypes = {
+  alt: string;
   asset: {
     url: string;
-    altText: string;
+    alt: string;
     metadata: {
       dimensions: {
         width: number;
@@ -38,9 +40,9 @@ type ImageTypes = (
 } & React.HTMLAttributes<HTMLImageElement>;
 
 export const ImgDataQuery = `
+  alt,
   asset -> {
     url,
-    altText,
     metadata {
       dimensions {
         width,
@@ -57,7 +59,7 @@ export default function Img({ data, src, width, height, alt, sizes, priority, ..
     src = data.asset?.url;
     width = width || data.asset?.metadata?.dimensions?.width;
     height = height || data.asset?.metadata?.dimensions?.height;
-    alt = alt || data.asset?.altText;
+    alt = alt || data?.alt;
   }
 
   return (
@@ -68,7 +70,6 @@ export default function Img({ data, src, width, height, alt, sizes, priority, ..
       alt={alt || ''}
       sizes={sizes}
       priority={priority}
-      loading={priority ? 'eager' : 'lazy'}
       {...((width! > 40 || height! > 40) && {
         blurDataURL: placeholder,
         placeholder: 'blur',
