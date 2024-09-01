@@ -13,4 +13,4 @@ export type HeroHeaderVideoTypes = {
   index: number;
 };
 
-export type VideoBoxTypes = { image: ImgDataTypes; videoId: string; PlayIcon: ReactNode; index: number };
+export type VideoBoxTypes = { videoId: string; PlayIcon: ReactNode; index: number; children: ReactNode };

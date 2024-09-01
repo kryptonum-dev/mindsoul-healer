@@ -1,11 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import Img from '@/components/ui/image';
 import styles from './HeroHeaderVideo.module.scss';
 import type { VideoBoxTypes } from './HeroHeaderVideo.types';
 
-export default function VideoBox({ image, videoId, PlayIcon, index }: VideoBoxTypes) {
+export default function VideoBox({ videoId, PlayIcon, index, children }: VideoBoxTypes) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showPlayButton, setShowPlayButton] = useState<boolean>(true);
@@ -22,7 +21,7 @@ export default function VideoBox({ image, videoId, PlayIcon, index }: VideoBoxTy
           setShowPlayButton(false);
         }}
       >
-        <Img data={image} sizes='(max-width: 659px) 328px, 381px' priority={index === 0} />
+        {children}
         <div className={styles.play} aria-hidden={!showPlayButton}>
           {PlayIcon}
         </div>
