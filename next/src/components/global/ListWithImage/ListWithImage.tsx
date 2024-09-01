@@ -13,7 +13,7 @@ export default function ListWithImage({ list, index }: ListWithImageTypes) {
             <Heading {...sectionHeading} hierarchy={index === 0 && i === 0 ? 'h1' : 'h2'} />
             <Markdown className={styles.content}>{content}</Markdown>
           </header>
-          <Img data={image} sizes='' />
+          <Img data={image} sizes='(max-width: 899px) 100vw, (max-width: 1229px) 58vw, 699px' />
         </div>
       ))}
     </section>

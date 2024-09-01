@@ -22,7 +22,10 @@ export default async function ModuleList({
   const Subheading = index === 0 ? 'h2' : 'h3';
   return (
     <section className={styles.section}>
-      <Img data={image} sizes='' />
+      <Img
+        data={image}
+        sizes='(max-width: 419px) 242px, (max-width: 679px) 60vw, (max-width: 1023px) 451px, (max-width: 1259px) 38vw, 461px'
+      />
       <div className={styles.container}>
         <header>
           <Heading {...sectionHeading} hierarchy={index === 0 ? 'h1' : 'h2'} />

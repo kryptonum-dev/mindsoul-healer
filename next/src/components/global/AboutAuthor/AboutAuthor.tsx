@@ -20,7 +20,7 @@ export default function AboutAuthor({
         <Heading {...sectionHeading} hierarchy={index === 0 ? 'h1' : 'h2'} />
       </header>
       <Markdown className={styles.main}>{paragraphMain}</Markdown>
-      <Img data={image} sizes='' />
+      <Img data={image} sizes='(max-width: 679px) 242px, (max-width: 1079px) 314px,  (max-width: 1360px) 30vw, 372px' />
       <div className={styles.box}>
         <Markdown className={styles.secondary}>{paragraphSecondary}</Markdown>
         <div className={styles.founder}>

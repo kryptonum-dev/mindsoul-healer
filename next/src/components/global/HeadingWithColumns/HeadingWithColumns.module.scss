@@ -13,6 +13,12 @@
     max-width: 382px;
     width: 100%;
 
+    &:only-of-type {
+      grid-column: 2/4;
+      justify-self: center;
+      max-width: 764px;
+    }
+
     .heading {
       margin-bottom: 16px;
       font-size: clamp(calc(20rem / 16), calc(22vw / 7.68), calc(22rem / 16));
@@ -42,6 +48,10 @@
 
     .content {
       max-width: none;
+
+      &:only-of-type {
+        grid-column: 1/2;
+      }
     }
   }
 
