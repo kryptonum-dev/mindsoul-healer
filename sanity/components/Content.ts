@@ -6,6 +6,7 @@ import ModuleList from '../schema/components/ModuleList';
 import PurchaseCtaSection from '../schema/components/PurchaseCtaSection';
 import SimpleGridList from '../schema/components/SimpleGridList';
 import SimpleStaggeredGrid from '../schema/components/SimpleStaggeredGrid';
+import TwoBoxesCta from '../schema/components/TwoBoxesCta';
 import { defineType } from 'sanity';
 
 export default defineType({
@@ -21,5 +22,6 @@ export default defineType({
     PurchaseCtaSection,
     AboutAuthor,
     HeadingWithColumns,
+    TwoBoxesCta,
   ],
 });

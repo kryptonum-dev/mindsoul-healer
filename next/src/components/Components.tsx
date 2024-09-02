@@ -6,6 +6,7 @@ import ModuleList, { ModuleListTypes, ModuleList_Query } from './global/ModuleLi
 import PurchaseCtaSection, { PurchaseCtaSectionTypes, PurchaseCtaSection_Query } from './global/PurchaseCtaSection';
 import SimpleGridList, { SimpleGridListTypes, SimpleGridList_Query } from './global/SimpleGridList';
 import SimpleStaggeredGrid, { SimpleStaggeredGridTypes, SimpleStaggeredGrid_Query } from './global/SimpleStaggeredGrid';
+import TwoBoxesCta, { TwoBoxesCtaTypes, TwoBoxesCta_Query } from './global/TwoBoxesCta';
 
 type componentsMapTypes = {
   HeroHeaderVideo: HeroHeaderVideoTypes;
@@ -16,6 +17,7 @@ type componentsMapTypes = {
   PurchaseCtaSection: PurchaseCtaSectionTypes;
   AboutAuthor: AboutAuthorTypes;
   HeadingWithColumns: HeadingWithColumnsTypes;
+  TwoBoxesCta: TwoBoxesCtaTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string; index: number };
@@ -33,6 +35,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       PurchaseCtaSection: <PurchaseCtaSection {...(item as PurchaseCtaSectionTypes)} />,
       AboutAuthor: <AboutAuthor {...(item as AboutAuthorTypes)} />,
       HeadingWithColumns: <HeadingWithColumns {...(item as HeadingWithColumnsTypes)} />,
+      TwoBoxesCta: <TwoBoxesCta {...(item as TwoBoxesCtaTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -51,5 +54,6 @@ export const Components_Query = /* groq */ `
       ${PurchaseCtaSection_Query}
       ${AboutAuthor_Query}
       ${HeadingWithColumns_Query}
+      ${TwoBoxesCta_Query}
     },
   `;

@@ -9,7 +9,7 @@ export const HeadingWithColumns_Query = /* groq */ `
         columns[]{
         heading,
         content
-        }
-    }
+        },
+    },
 
 `;
