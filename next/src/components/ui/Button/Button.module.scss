@@ -12,7 +12,7 @@
     z-index: 5;
     text-transform: uppercase;
     gap: 16px;
-    padding: 14px;
+    padding: 12px 14px;
     transition: color 0.2s var(--easing);
 
     &[data-shade='light'] {

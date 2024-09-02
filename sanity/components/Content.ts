@@ -1,4 +1,5 @@
 import AboutAuthor from '../schema/components/AboutAuthor';
+import FaqSection from '../schema/components/FaqSection';
 import HeadingWithColumns from '../schema/components/HeadingWithColumns';
 import HeroHeaderVideo from '../schema/components/HeroHeaderVideo';
 import ListWithImage from '../schema/components/ListWithImage';
@@ -23,5 +24,6 @@ export default defineType({
     AboutAuthor,
     HeadingWithColumns,
     TwoBoxesCta,
+    FaqSection,
   ],
 });

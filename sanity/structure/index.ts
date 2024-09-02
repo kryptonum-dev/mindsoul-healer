@@ -14,4 +14,5 @@ export const structure: StructureResolver = S =>
       createSingleton(S, 'Index_Page'),
       S.divider(),
       S.documentTypeListItem('Module_Collection'),
+      S.documentTypeListItem('Faq_Collection'),
     ]);

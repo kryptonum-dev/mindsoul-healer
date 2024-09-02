@@ -1,4 +1,5 @@
 import Content from '../components/Content';
+import Faq_Collection from './collectionTypes/Faq_Collection';
 import Module_Collection from './collectionTypes/Module_Collection';
 import seo from './components/seo';
 import Index_Page from './singleTypes/Index_Page';
@@ -22,4 +23,5 @@ export const schemaTypes = [
   cta,
   imageAlt,
   Module_Collection,
+  Faq_Collection,
 ];

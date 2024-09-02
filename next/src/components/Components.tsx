@@ -1,4 +1,5 @@
 import AboutAuthor, { AboutAuthorTypes, AboutAuthor_Query } from './global/AboutAuthor';
+import FaqSection, { FaqSectionTypes, FaqSection_Query } from './global/FaqSection';
 import HeadingWithColumns, { HeadingWithColumnsTypes, HeadingWithColumns_Query } from './global/HeadingWithColumns';
 import HeroHeaderVideo, { HeroHeaderVideoTypes, HeroHeaderVideo_Query } from './global/HeroHeaderVideo';
 import ListWithImage, { ListWithImageTypes, ListWithImage_Query } from './global/ListWithImage';
@@ -18,6 +19,7 @@ type componentsMapTypes = {
   AboutAuthor: AboutAuthorTypes;
   HeadingWithColumns: HeadingWithColumnsTypes;
   TwoBoxesCta: TwoBoxesCtaTypes;
+  FaqSection: FaqSectionTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string; index: number };
@@ -36,6 +38,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       AboutAuthor: <AboutAuthor {...(item as AboutAuthorTypes)} />,
       HeadingWithColumns: <HeadingWithColumns {...(item as HeadingWithColumnsTypes)} />,
       TwoBoxesCta: <TwoBoxesCta {...(item as TwoBoxesCtaTypes)} />,
+      FaqSection: <FaqSection {...(item as FaqSectionTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -55,5 +58,6 @@ export const Components_Query = /* groq */ `
       ${AboutAuthor_Query}
       ${HeadingWithColumns_Query}
       ${TwoBoxesCta_Query}
+      ${FaqSection_Query}
     },
   `;
