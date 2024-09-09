@@ -9,12 +9,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 32px;
-    row-gap: 48px;
 
     .box {
       display: flex;
       align-items: flex-start;
       column-gap: 8px;
+      padding-bottom: 48px;
+      cursor: pointer;
     }
 
     img {
@@ -58,6 +59,7 @@
       .container {
         overflow: hidden;
         padding: 0 16px 0 20px;
+        cursor: auto;
 
         > *:first-child {
           padding-top: 16px;
@@ -75,24 +77,30 @@
     max-width: 608px;
     .faq {
       grid-template-columns: 1fr;
-      row-gap: 32px;
+
+      .box {
+        padding-bottom: 32px;
+      }
     }
   }
 
   @media (max-width: 599px) {
     .faq {
-      row-gap: 12px;
-      details {
-        overflow: hidden;
+      .box {
+        padding-bottom: 12px;
 
-        .container {
-          padding: 0;
+        details {
+          overflow: hidden;
 
-          > *:first-child {
-            padding-top: 12px;
-          }
-          a {
-            margin-bottom: 12px;
+          .container {
+            padding: 0;
+
+            > *:first-child {
+              padding-top: 12px;
+            }
+            a {
+              margin-bottom: 12px;
+            }
           }
         }
       }

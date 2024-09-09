@@ -1,8 +1,10 @@
+import { isPreviewDeployment, isProductionDeployment } from '@/utils/is-preview-deployment';
+
 /**
  * Global declaration of domain name of the website. Be aware of the protocol and www or non-www prefix.
  * @constant
  */
-export const DOMAIN: string = 'https://mindsoulhealer.pl';
+export const DOMAIN: string = isProductionDeployment ? 'https://mindsoulhealer.pl' : 'http://localhost:3000';
 
 /**
  * Global default title.
@@ -27,7 +29,7 @@ export const LOGO_URL: string = `${DOMAIN}/icon-512.png`;
  * @constant
  */
 export const DEFAULT_DESCRIPTION: string =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget convallis lacus. Maecenas eu ante libero.';
+  'Ten kurs pomoże Ci rozwijać umiejętności na wielu poziomach. Znajdź motywację, zmień swoje podejście do życia i osiągnij sukces!';
 
 /**
  * Global declaration of themeColor in HEX format.

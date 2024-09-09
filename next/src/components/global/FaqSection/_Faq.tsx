@@ -17,10 +17,14 @@ export default function Faq({ list, PlusIcon, MinusIcon, UserIcon, CartIcon }: F
   return (
     <div className={styles.faq}>
       {list.map(({ question, answer, image, cta }, i) => (
-        <div className={styles.box}>
-          {image ? <Img data={image} sizes='' /> : <div className={styles.user}>{UserIcon}</div>}
-          <details key={i} open data-open={openIndex === i}>
-            <summary onClick={e => handleClick(e, i)} tabIndex={openIndex === i ? -1 : 0}>
+        <div key={i} className={styles.box} onClick={e => handleClick(e, i)}>
+          {image ? (
+            <Img data={image} sizes='(max-width: 579px) 32px, 40px' />
+          ) : (
+            <div className={styles.user}>{UserIcon}</div>
+          )}
+          <details open data-open={openIndex === i}>
+            <summary tabIndex={openIndex === i ? -1 : 0}>
               {question}
               {openIndex === i ? MinusIcon : PlusIcon}
             </summary>
@@ -29,10 +33,11 @@ export default function Faq({ list, PlusIcon, MinusIcon, UserIcon, CartIcon }: F
               animate={{ height: openIndex === i ? 'auto' : 0 }}
               exit={{ height: 0 }}
               transition={{
-                duration: 0.4,
+                duration: 0.3,
                 ease: EASING,
               }}
               className={styles.container}
+              onClick={e => e.stopPropagation()}
             >
               {answer}
               {!!cta && <Button tabIndex={openIndex === i ? 0 : -1} {...cta} shade='dark' icon={CartIcon} />}

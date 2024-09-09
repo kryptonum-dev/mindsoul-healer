@@ -21,7 +21,6 @@
     &::before {
       position: absolute;
       inset: -4px;
-
       content: '';
       background-color: var(--neutral-200, #efefef);
       opacity: 0;

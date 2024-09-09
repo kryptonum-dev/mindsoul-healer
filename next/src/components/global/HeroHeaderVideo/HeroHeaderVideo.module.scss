@@ -138,7 +138,7 @@
             transform: translate(-50%, -50%);
             z-index: 20;
             opacity: 0;
-            transition: opacity 0.3s var(--easing);
+            transition: opacity 0.2s var(--easing);
           }
 
           &[data-loading='false'][data-open='true'] {
