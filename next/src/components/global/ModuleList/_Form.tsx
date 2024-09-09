@@ -10,9 +10,9 @@ import FormState from '@/components/ui/FormState';
 import Input from '@/components/ui/Input';
 import TextLink from '@/components/ui/TextLink';
 import styles from './ModuleList.module.scss';
-import { FormTypes } from './ModuleList.types';
+import { ModuleFormTypes } from './ModuleList.types';
 
-export default function Form({ buttonText, videoID, heading, privacyPolicy, index }: FormTypes) {
+export default function Form({ buttonText, videoID, heading, privacyPolicy, index }: ModuleFormTypes) {
   const formStateData = {
     errorState: {
       heading: 'Nie udało się dodać maila',

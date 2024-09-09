@@ -77,9 +77,16 @@
     right: 8px;
   }
 
+  &[data-textarea='true'] {
+    svg {
+      top: 8px;
+      right: 8px;
+    }
+  }
+
   .error {
     position: absolute;
-    bottom: -4px;
+    bottom: 0px;
     left: 10px;
     transform: translateY(100%);
     font-size: calc(13rem / 16);

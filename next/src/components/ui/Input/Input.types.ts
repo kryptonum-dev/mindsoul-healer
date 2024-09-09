@@ -1,3 +1,4 @@
+import { RefObject } from 'react';
 import { FieldErrors } from 'react-hook-form';
 
 export type InputTypes = {

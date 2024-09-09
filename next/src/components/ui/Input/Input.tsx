@@ -19,6 +19,7 @@ export default function Input({
       aria-disabled={disabled}
       aria-invalid={!!errors[register.name]}
       data-filled={Boolean(filled)}
+      data-textarea={textarea}
     >
       <p className={styles.row} dangerouslySetInnerHTML={{ __html: label }}></p>
       <Element disabled={disabled} {...register} name={register.name} {...props} />

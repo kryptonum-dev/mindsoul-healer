@@ -1,0 +1,217 @@
+.section {
+  padding: clamp(32px, calc(64vw / 7.68), 80px) 0 clamp(16px, calc(64vw / 7.68), 80px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 64px;
+
+  header {
+    margin-bottom: 64px;
+    grid-column: 1/3;
+  }
+
+  .text {
+    h2,
+    h3 {
+      margin-bottom: 16px;
+      font-weight: 400;
+      &:not(:first-child) {
+        margin-top: 32px;
+      }
+    }
+    p {
+      color: var(--neutral-600, #696969);
+    }
+  }
+  .box {
+    width: 100%;
+    background-color: var(--neutral-100, #fcfcfc);
+    align-self: start;
+    padding: clamp(16px, calc(32vw / 7.68), 32px);
+    padding-bottom: 16px;
+
+    .question {
+      position: relative;
+      .text {
+        margin-bottom: 16px;
+      }
+
+      form {
+        position: relative;
+        .questionText {
+          position: relative;
+          margin-bottom: 22px;
+
+          button {
+            position: absolute;
+            bottom: 16px;
+            right: 8px;
+            min-width: 204px;
+          }
+
+          &:has(label:first-of-type:hover) {
+            button:not(:disabled) {
+              &::after {
+                box-shadow: inset 0 0 0 1px var(--neutral-800, #070101);
+              }
+            }
+          }
+
+          > label:first-of-type {
+            min-height: 168px;
+          }
+        }
+
+        .person {
+          display: none;
+          animation: fadeIn 0.2s var(--easing);
+          background-color: var(--neutral-100);
+          position: absolute;
+          inset: 0;
+          z-index: 10;
+          flex-direction: column;
+
+          label {
+            margin-bottom: 16px;
+          }
+
+          button,
+          label:first-of-type {
+            max-width: 262px;
+          }
+        }
+
+        &[data-questionsubmited='true'] {
+          .person {
+            display: flex;
+          }
+        }
+      }
+
+      > div:last-of-type {
+        padding: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .line {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 8px;
+
+      &::before,
+      &::after {
+        content: '';
+        background-color: var(--neutral-300, #cccccc);
+        flex: 1;
+        height: 1px;
+      }
+    }
+
+    .mail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 12px;
+      row-gap: 4px;
+      flex-wrap: wrap;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        a,
+        .copy {
+          position: relative;
+          overflow: hidden;
+          z-index: 5;
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+          }
+          &::before {
+            left: 0%;
+            z-index: -2;
+          }
+
+          &::after {
+            left: -100%;
+            z-index: 0;
+            background-color: var(--neutral-300, #cccccc);
+            transition: transform 0.2s var(--easing);
+            z-index: -1;
+          }
+
+          &:hover {
+            &::after {
+              transform: translateX(100%);
+            }
+          }
+          &:focus-visible {
+            z-index: 10;
+          }
+        }
+
+        a {
+          padding: 2px 4px;
+          display: inline-block;
+          height: 36px;
+          display: flex;
+          align-items: center;
+
+          &::before {
+            background-color: var(--neutral-100, #fcfcfc);
+          }
+        }
+
+        .copy {
+          font-size: calc(13rem / 16);
+          padding: 4px 8px;
+          min-width: 84px;
+          height: 36px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &::before {
+            background-color: var(--neutral-200, #efefef);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    grid-template-columns: 1fr;
+    max-width: 608px;
+    header {
+      grid-column: 1/2;
+    }
+
+    .text {
+      p:last-child {
+        margin-bottom: 64px;
+      }
+    }
+  }
+
+  @media (max-width: 399px) {
+    padding-bottom: 16px;
+  }
+}

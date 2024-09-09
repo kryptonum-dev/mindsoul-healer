@@ -5,6 +5,7 @@ import HeroHeaderVideo from '../schema/components/HeroHeaderVideo';
 import ListWithImage from '../schema/components/ListWithImage';
 import ModuleList from '../schema/components/ModuleList';
 import PurchaseCtaSection from '../schema/components/PurchaseCtaSection';
+import QuestionSection from '../schema/components/QuestionSection';
 import SimpleGridList from '../schema/components/SimpleGridList';
 import SimpleStaggeredGrid from '../schema/components/SimpleStaggeredGrid';
 import TwoBoxesCta from '../schema/components/TwoBoxesCta';
@@ -25,5 +26,6 @@ export default defineType({
     HeadingWithColumns,
     TwoBoxesCta,
     FaqSection,
+    QuestionSection,
   ],
 });

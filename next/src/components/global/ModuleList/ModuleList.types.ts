@@ -14,7 +14,7 @@ export type ModuleListTypes = {
   index: number;
 };
 
-export type FormTypes = {
+export type ModuleFormTypes = {
   heading: ReactNode;
   buttonText: string;
   videoID: string;
