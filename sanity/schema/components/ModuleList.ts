@@ -14,6 +14,15 @@ export default defineField({
       validation: Rule => Rule.required(),
     }),
     defineField({
+      name: 'video',
+      type: 'file',
+      title: 'Plik Wideo (ocpcjonalny)',
+      description: 'Wideo nachodzi na obrazek',
+      options: {
+        accept: 'video/mp4',
+      },
+    }),
+    defineField({
       name: 'sectionHeading',
       type: 'sectionHeading',
       title: 'Nagłówek sekcji',

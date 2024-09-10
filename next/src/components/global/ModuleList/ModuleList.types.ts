@@ -12,6 +12,7 @@ export type ModuleListTypes = {
   form: { formHeading: string; videoID: string; buttonText: string };
   cta: CtaDataTypes;
   index: number;
+  video?: string;
 };
 
 export type ModuleFormTypes = {
@@ -35,3 +36,5 @@ export type NewsletterStateTypes = {
   isLoading: boolean;
   setStatus: React.Dispatch<React.SetStateAction<FormStatusTypes>>;
 };
+
+export type SparkVideoTypes = { url: string };

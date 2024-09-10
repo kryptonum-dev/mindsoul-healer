@@ -11,6 +11,7 @@ export const ModuleList_Query = /* groq */ `
         image {
             ${ImgDataQuery}
         },
+        "video": video.asset -> url,
         list[] -> {
             moduleName,
             moduleDuration,

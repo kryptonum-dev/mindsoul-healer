@@ -1,14 +1,28 @@
 .section {
   max-width: 1366px;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: max-content 1fr;
   column-gap: 80px;
   padding-bottom: clamp(32px, calc(48vw / 7.68), 64px);
-  > img {
+  .image {
     width: 100%;
-    max-width: 461px;
     max-width: clamp(280px, calc(280vw / 7.68), 461px);
+    position: relative;
+    height: max-content;
+
+    img {
+      width: 100%;
+    }
+
+    video {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: screen;
+    }
   }
   .container {
     justify-self: end;
@@ -187,8 +201,7 @@
     width: calc(100% - 2 * var(--pageMargin));
     padding-top: clamp(32px, calc(48vw / 7.68), 48px);
 
-    > img {
-      max-width: 451px;
+    .image {
       max-width: clamp(242px, calc(451vw / 7.68), 451px);
       margin-bottom: clamp(32px, calc(48vw / 7.68), 48px);
       justify-self: start;
