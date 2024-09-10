@@ -9,5 +9,6 @@ export const Gentium = localFont({
     { path: '../../public/fonts/GentiumPlus-Regular.ttf', weight: '400' },
     { path: '../../public/fonts/GentiumPlus-Bold.ttf', weight: '700' },
   ],
+  adjustFontFallback: 'Times New Roman',
   variable: '--font-gentium',
 });

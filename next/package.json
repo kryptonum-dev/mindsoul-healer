@@ -10,6 +10,7 @@
     "rfc": "plop"
   },
   "dependencies": {
+    "@types/gtag.js": "^0.0.20",
     "clipboard-copy": "^4.0.1",
     "framer-motion": "^11.3.31",
     "next": "14.2.6",

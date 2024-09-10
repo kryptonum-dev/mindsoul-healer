@@ -5,6 +5,7 @@ import Logo from '@/components/ui/Logo';
 import SocialLink from '@/components/ui/SocialLink';
 import TextLink from '@/components/ui/TextLink';
 import styles from './Footer.module.scss';
+import CookieButton from './_CookieButton';
 
 type FooterSocialsTypes = { _type: PlatformType; url: string }[];
 
@@ -40,22 +41,23 @@ export default async function Footer() {
           </nav>
         </div>
         <div className={styles.legals}>
-          <p>
-            Stworzone przez
-            <TextLink target='_blank' href='https://kryptonum.eu/pl'>
-              Kryptonum
-            </TextLink>
-          </p>
-          <div>
+          <div className={styles.created}>
             <span className={styles.year}>{new Date().getFullYear()}</span>
-            <div className={styles.links}>
-              <TextLink href={termsAndConditions} target='_blank'>
-                Regulamin
+            <p>
+              Stworzone przez
+              <TextLink target='_blank' href='https://kryptonum.eu/pl'>
+                Kryptonum
               </TextLink>
-              <TextLink href={privacyPolicy} target='_blank'>
-                Polityka Prywatności
-              </TextLink>
-            </div>
+            </p>
+          </div>
+          <div className={styles.links}>
+            <CookieButton />
+            <TextLink href={termsAndConditions} target='_blank'>
+              Regulamin
+            </TextLink>
+            <TextLink href={privacyPolicy} target='_blank'>
+              Polityka Prywatności
+            </TextLink>
           </div>
         </div>
       </div>

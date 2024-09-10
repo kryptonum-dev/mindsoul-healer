@@ -1,0 +1,57 @@
+.Switch {
+  .container {
+    width: 58px;
+    height: 32px;
+    background-color: var(--neutral-600, #696969);
+    border-radius: 500px;
+    padding: 4px;
+    transition:
+      background-color 0.2s var(--easing),
+      border-color 0.2s var(--easing);
+    cursor: pointer;
+
+    &:has(input[disabled]) {
+      cursor: not-allowed;
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    &:has(input:checked) {
+      background: var(--neutral-200, #efefef);
+      .box {
+        transform: translateX(26px);
+        background: var(--neutral-800, #070101);
+        svg {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+    &:has(input:focus-visible) {
+      outline: 1px solid var(--neutral-200, #efefef);
+      outline-offset: 5px;
+    }
+  }
+
+  .box {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background-color: var(--neutral-300, #ccc);
+    transition:
+      transform 0.2s var(--easing),
+      background-color 0.2s var(--easing);
+    svg {
+      opacity: 0;
+      transition: opacity 0.2s var(--easing);
+    }
+  }
+}
