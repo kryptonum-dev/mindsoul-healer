@@ -2,20 +2,18 @@ import { removeMarkdown } from '../../utils/remove-markdown';
 import { defineField } from 'sanity';
 
 const title = 'Listy ze zdjęciami';
-const icon = () => '📜';
 
 export default defineField({
   name: 'ListWithImage',
   title,
   type: 'document',
-  icon,
+  icon: () => '📜',
   fields: [
     defineField({
       name: 'list',
       type: 'array',
       title: 'Lista elementów',
       validation: Rule => Rule.required().min(2).max(6).error('Lista musi zawierać od 2 do 6 elementów'),
-
       of: [
         defineField({
           name: 'element',
@@ -58,9 +56,12 @@ export default defineField({
     }),
   ],
   preview: {
-    prepare: () => ({
-      title,
-      media: icon,
+    select: {
+      media: 'list.0.image',
+    },
+    prepare: ({ media }) => ({
+      title: removeMarkdown(title),
+      media,
     }),
   },
 });

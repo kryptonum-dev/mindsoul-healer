@@ -1,14 +1,11 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
 import { defineField } from 'sanity';
 
-const title = 'Sekcja z prostą siatką zdjęć';
-const icon = () => '📦';
-
 export default defineField({
   name: 'SimpleStaggeredGrid',
   type: 'document',
-  icon,
-  title,
+  title: 'Sekcja z prostą siatką zdjęć',
+  icon: () => '📷',
   validation: Rule => Rule.required(),
   fields: [
     defineField({
@@ -95,12 +92,13 @@ export default defineField({
     select: {
       heading: 'sectionHeading.heading',
       subheading: 'sectionHeading.subheading',
+      firstImage: 'imagesGrid.0.imageContainer.image',
       icon: 'icon',
     },
-    prepare: ({ heading, subheading, icon }) => ({
+    prepare: ({ heading, subheading, firstImage, icon }) => ({
       title: removeMarkdown(heading),
       subtitle: removeMarkdown(subheading),
-      media: icon,
+      media: firstImage || icon,
     }),
   },
 });

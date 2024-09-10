@@ -1,14 +1,11 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
 import { defineField } from 'sanity';
 
-const title = 'Prezentacja Modułów';
-const icon = () => '📚';
-
 export default defineField({
   name: 'ModuleList',
+  title: 'Prezentacja Modułów',
   type: 'document',
-  title,
-  icon,
+  icon: () => '📚',
   fields: [
     defineField({
       name: 'image',
@@ -76,12 +73,12 @@ export default defineField({
     select: {
       heading: 'sectionHeading.heading',
       subheading: 'sectionHeading.subheading',
-      icon: 'icon',
+      media: 'image',
     },
-    prepare: ({ heading, subheading, icon }) => ({
+    prepare: ({ heading, subheading, media }) => ({
       title: removeMarkdown(heading),
       subtitle: removeMarkdown(subheading),
-      media: icon,
+      media,
     }),
   },
 });

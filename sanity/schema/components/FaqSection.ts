@@ -1,14 +1,11 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
 import { defineField } from 'sanity';
 
-const title = 'Sekcja FAQ';
-const icon = () => '❓';
-
 export default defineField({
   name: 'FaqSection',
+  title: 'Sekcja FAQ',
   type: 'document',
-  title,
-  icon,
+  icon: () => '❓',
   fields: [
     defineField({
       name: 'sectionHeading',

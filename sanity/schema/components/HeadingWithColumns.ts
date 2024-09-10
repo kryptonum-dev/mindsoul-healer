@@ -1,15 +1,11 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
 import { defineField } from 'sanity';
 
-const title = 'Nagłówek z kolumnami tekstu';
-const icon = () => '📝';
-const columnIcon = () => '📄';
-
 export default defineField({
   name: 'HeadingWithColumns',
   type: 'document',
-  title,
-  icon,
+  title: 'Nagłówek z kolumnami tekstu',
+  icon: () => '📝',
   fields: [
     defineField({
       name: 'sectionHeading',
@@ -25,7 +21,7 @@ export default defineField({
           name: 'content',
           type: 'object',
           title: 'Kolumna',
-          icon: columnIcon,
+          icon: () => '📄',
           fields: [
             defineField({
               name: 'heading',

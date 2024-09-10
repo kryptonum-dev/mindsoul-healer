@@ -11,7 +11,6 @@ export default function FaqSection({ sectionHeading, list, index }: FaqSectionTy
     cta,
     image,
   }));
-  console.log(sectionHeading);
   return (
     <section className={`${styles.section} max-width`}>
       <header>

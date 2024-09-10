@@ -1,14 +1,11 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
 import { defineField } from 'sanity';
 
-const title = 'Sekcja HERO z nagłówkiem i filmikiem';
-const icon = () => '⭐️';
-
 export default defineField({
   name: 'HeroHeaderVideo',
   type: 'document',
-  title,
-  icon,
+  title: 'Sekcja HERO z nagłówkiem i filmikiem',
+  icon: () => '⭐️',
   fields: [
     defineField({
       name: 'sectionHeading',
@@ -51,12 +48,12 @@ export default defineField({
     select: {
       heading: 'sectionHeading.heading',
       subheading: 'sectionHeading.subheading',
-      icon: 'icon',
+      media: 'image',
     },
-    prepare: ({ heading, subheading, icon }) => ({
+    prepare: ({ heading, subheading, media }) => ({
       title: removeMarkdown(heading),
       subtitle: removeMarkdown(subheading),
-      media: icon,
+      media,
     }),
   },
 });
