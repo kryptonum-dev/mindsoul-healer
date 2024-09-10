@@ -3,6 +3,7 @@ import Faq_Collection from './collectionTypes/Faq_Collection';
 import Module_Collection from './collectionTypes/Module_Collection';
 import seo from './components/seo';
 import Index_Page from './singleTypes/Index_Page';
+import NotFound_Page from './singleTypes/NotFound_Page';
 import { global } from './singleTypes/global';
 import cta from './ui/cta';
 import fullCtaBox from './ui/fullCtaBox';
@@ -13,6 +14,7 @@ import videoID from './ui/videoID';
 
 export const schemaTypes = [
   Index_Page,
+  NotFound_Page,
   seo,
   global,
   socialMedia,

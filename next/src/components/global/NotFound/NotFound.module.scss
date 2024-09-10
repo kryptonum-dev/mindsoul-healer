@@ -1,0 +1,31 @@
+.section {
+  background-color: var(--neutral-800, #070101);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  color: var(--neutral-200, #efefef);
+  margin-top: -46px;
+  padding-top: 46px;
+
+  .container {
+    max-width: 379px;
+
+    h1 {
+      margin-bottom: 32px;
+    }
+
+    .paragraph {
+      margin-bottom: clamp(32px, calc(48vw / 7.68), 48px);
+    }
+
+    a {
+      max-width: 277px;
+      width: 100%;
+
+      @media (max-width: 399px) {
+        max-width: 328px;
+      }
+    }
+  }
+}

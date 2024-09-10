@@ -1,3 +1,4 @@
+import getLegalLinks from '@/utils/get-legal-links';
 import Heading from '@/components/ui/Heading';
 import Markdown from '@/components/ui/markdown';
 import styles from './QuestionSection.module.scss';
@@ -5,7 +6,9 @@ import type { QuestionSectionTypes } from './QuestionSection.types';
 import Copy from './_Copy';
 import Question from './_Question';
 
-export default function QuestionSection({ sectionHeading, questionList, email, index }: QuestionSectionTypes) {
+export default async function QuestionSection({ sectionHeading, questionList, email, index }: QuestionSectionTypes) {
+  const { privacyPolicy } = await getLegalLinks();
+
   const Subheading = index === 0 ? Markdown.h2 : Markdown.h3;
 
   return (
@@ -22,7 +25,7 @@ export default function QuestionSection({ sectionHeading, questionList, email, i
         ))}
       </div>
       <div className={styles.box}>
-        <Question privacyPolicy='' ArrowIcon={<ArrowIcon />} index={index} />
+        <Question privacyPolicy={privacyPolicy} ArrowIcon={<ArrowIcon />} index={index} />
         <div className={styles.line}>
           <LineIcon />
         </div>
