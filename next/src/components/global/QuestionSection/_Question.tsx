@@ -43,7 +43,7 @@ export default function Question({ privacyPolicy, ArrowIcon, index }: QuestionFo
     await new Promise(resolve => {
       setTimeout(resolve, 1000);
     });
-    const isSuccess = false;
+    const isSuccess = true;
     setStatus({ sending: false, success: isSuccess });
     reset();
   };
@@ -76,7 +76,7 @@ export default function Question({ privacyPolicy, ArrowIcon, index }: QuestionFo
               required: { value: true, message: 'Wiadomośc jest wymagana' },
               minLength: { value: 10, message: 'Wiadomość musi zawierać minimum 10 znaków' },
             })}
-            maxLength={300}
+            maxLength={600}
             errors={errors}
           />
           <Button

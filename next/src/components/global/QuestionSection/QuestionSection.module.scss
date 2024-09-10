@@ -10,10 +10,12 @@
   }
 
   .text {
+    align-self: center;
     h2,
     h3 {
       margin-bottom: 16px;
       font-weight: 400;
+      font-size: clamp(calc(20rem / 16), calc(22vw / 7.68), calc(22rem / 16));
       &:not(:first-child) {
         margin-top: 32px;
       }
@@ -26,7 +28,7 @@
     width: 100%;
     background-color: var(--neutral-100, #fcfcfc);
     align-self: start;
-    padding: clamp(16px, calc(32vw / 7.68), 32px);
+    padding: clamp(16px, calc(16vw / 7.68), 32px);
     padding-bottom: 16px;
 
     .question {
@@ -58,6 +60,7 @@
 
           > label:first-of-type {
             min-height: 168px;
+            padding-bottom: 68px;
           }
         }
 
@@ -90,16 +93,17 @@
       > div:last-of-type {
         padding: 0;
       }
+      @media (max-width: 399px) {
+        min-height: 265px;
+      }
     }
 
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateX(-20px);
       }
       to {
         opacity: 1;
-        transform: none;
       }
     }
 
