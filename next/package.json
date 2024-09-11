@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@types/gtag.js": "^0.0.20",
+    "@types/vimeo__player": "^2.18.3",
+    "@vimeo/player": "^2.24.0",
     "clipboard-copy": "^4.0.1",
     "framer-motion": "^11.3.31",
     "next": "14.2.6",

@@ -9,7 +9,7 @@ export type ModuleListTypes = {
   paragraph: string;
   image: ImgDataTypes;
   list: { moduleName: string; moduleDuration: number; lessonList: string[] }[];
-  form: { formHeading: string; videoID: string; buttonText: string };
+  form: { formHeading: string; videoID: string; buttonText: string; videoThumbnail: ImgDataTypes };
   cta: CtaDataTypes;
   index: number;
   video?: string;
@@ -18,7 +18,8 @@ export type ModuleListTypes = {
 export type ModuleFormTypes = {
   heading: ReactNode;
   buttonText: string;
-  videoID: string;
+  video: string;
+  thumbnail: ImgDataTypes;
   privacyPolicy: string;
   index: number;
 };

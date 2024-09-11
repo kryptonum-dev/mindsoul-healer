@@ -21,7 +21,6 @@ export default async function ModuleList({
 }: ModuleListTypes) {
   const { privacyPolicy } = await getLegalLinks();
 
-  console.log(video);
 
   const Subheading = index === 0 ? 'h2' : 'h3';
   return (
@@ -66,6 +65,8 @@ export default async function ModuleList({
                           {...form}
                           index={index}
                           privacyPolicy={privacyPolicy}
+                          video={form.videoID}
+                          thumbnail={form.videoThumbnail}
                           heading={
                             index === 0 ? (
                               <Markdown.h3>{form.formHeading}</Markdown.h3>

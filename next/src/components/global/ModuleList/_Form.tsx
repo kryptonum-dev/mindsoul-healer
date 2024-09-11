@@ -9,10 +9,12 @@ import Checkbox from '@/components/ui/Checkbox';
 import FormState from '@/components/ui/FormState';
 import Input from '@/components/ui/Input';
 import TextLink from '@/components/ui/TextLink';
+import VideoBox from '@/components/ui/VideoBox';
+import Img from '@/components/ui/image';
 import styles from './ModuleList.module.scss';
 import { ModuleFormTypes } from './ModuleList.types';
 
-export default function Form({ buttonText, videoID, heading, privacyPolicy, index }: ModuleFormTypes) {
+export default function Form({ buttonText, heading, privacyPolicy, index, thumbnail, video }: ModuleFormTypes) {
   const formStateData = {
     errorState: {
       heading: 'Nie udało się dodać maila',
@@ -48,7 +50,9 @@ export default function Form({ buttonText, videoID, heading, privacyPolicy, inde
     <li className={styles.newsletter}>
       <header>
         {heading}
-        <div className={styles.video}></div>
+        <VideoBox title='Zwiastun bezpłatnej lekcji' videoId={video} options={{ muted: true, controls: false }}>
+          <Img sizes='' data={thumbnail} />
+        </VideoBox>
       </header>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Input

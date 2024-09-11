@@ -1,5 +1,5 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
-import { defineField } from 'sanity';
+import { CollapseMenu, defineField } from 'sanity';
 
 export default defineField({
   name: 'ModuleList',
@@ -56,6 +56,16 @@ export default defineField({
           type: 'markdown',
           title: 'Nagłówek formularza',
           validation: Rule => Rule.required(),
+        }),
+        defineField({
+          name: 'videoThumbnail',
+          type: 'imageAlt',
+          description: 'Obrazek wyświetlany przed odtworzeniem filmiku',
+          title: 'Obrazek do filmiku',
+          options: {
+            collapsible: false,
+            collapsed: false,
+          },
         }),
         defineField({
           name: 'videoID',

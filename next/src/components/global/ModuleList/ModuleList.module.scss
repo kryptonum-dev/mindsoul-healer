@@ -168,7 +168,7 @@
         margin-bottom: 16px;
       }
 
-      .video {
+      > div:last-of-type {
         aspect-ratio: 16/9;
         width: 100%;
         background-color: var(--neutral-800, #070101);

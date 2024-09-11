@@ -19,6 +19,9 @@ export const ModuleList_Query = /* groq */ `
         },
         form {
             formHeading,
+            videoThumbnail {
+                ${ImgDataQuery}
+            },
             videoID,
             buttonText,
         },
