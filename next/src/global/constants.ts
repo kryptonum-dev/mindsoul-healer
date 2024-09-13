@@ -53,7 +53,7 @@ export const LOCALE: string = 'pl';
  * Declaration of global easing.
  * @constant
  */
-export const EASING: number[] = [0.11, 0, 0.5, 0];
+export const EASING: number[] = [0.65, 0.05, 0.36, 1];
 
 export const REGEX: { email: RegExp; phone: RegExp; string: RegExp } = {
   email: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,

@@ -11,16 +11,17 @@
     column-gap: 32px;
 
     .box {
-      display: flex;
+      display: grid;
       align-items: flex-start;
+      grid-template-columns: clamp(32px, calc(40vw / 7.68), 40px) 1fr;
       column-gap: 8px;
       padding-bottom: 48px;
       cursor: pointer;
     }
 
     img {
-      width: clamp(32px, calc(40vw / 7.68), 40px);
       aspect-ratio: 1/1;
+      width: 100%;
     }
 
     .user {
@@ -87,7 +88,7 @@
   @media (max-width: 599px) {
     .faq {
       .box {
-        padding-bottom: 12px;
+        padding-bottom: clamp(16px, calc(24vw / 5.99), 24px);
 
         details {
           overflow: hidden;

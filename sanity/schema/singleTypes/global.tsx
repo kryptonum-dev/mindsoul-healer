@@ -7,21 +7,6 @@ export const global = defineType({
   icon: () => '🌍',
   fields: [
     defineField({
-      name: 'footer',
-      type: 'object',
-      title: 'Stopka',
-      options: { collapsible: true, collapsed: true },
-      validation: Rule => Rule.required(),
-      fields: [
-        defineField({
-          name: 'socialMedia',
-          type: 'socialMedia',
-          title: 'Social Media',
-          validation: Rule => Rule.required(),
-        }),
-      ],
-    }),
-    defineField({
       name: 'privacyPolicy',
       type: 'url',
       title: 'Polityka Prywatności',

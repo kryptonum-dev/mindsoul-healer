@@ -1,3 +1,4 @@
+import { getSocials } from '@/utils/get-socials';
 import Heading from '@/components/ui/Heading';
 import SocialLink from '@/components/ui/SocialLink';
 import Img from '@/components/ui/image';
@@ -5,15 +6,16 @@ import Markdown from '@/components/ui/markdown';
 import styles from './AboutAuthor.module.scss';
 import type { AboutAuthorTypes } from './AboutAuthor.types';
 
-export default function AboutAuthor({
+export default async function AboutAuthor({
   sectionHeading,
   paragraphMain,
   paragraphSecondary,
   image,
-  socialMedia,
   list,
   index,
 }: AboutAuthorTypes) {
+  const socials = await getSocials(['tiktok', 'instagram', 'youtube']);
+
   return (
     <section className={`${styles.section} max-width`}>
       <header>
@@ -34,15 +36,15 @@ export default function AboutAuthor({
           </div>
         </div>
         <nav className={styles.socials}>
-          {socialMedia.map(({ _type, url }, i) => (
+          {socials.map(({ name, href }, i) => (
             <SocialLink
               style={{ zIndex: `${20 - i}` }}
               key={i}
-              href={url}
+              href={href}
               target='_blank'
               rel='norefferer'
-              aria-label={`Link do ${_type}`}
-              platform={_type}
+              aria-label={`Link do ${name}`}
+              platform={name}
             />
           ))}
         </nav>

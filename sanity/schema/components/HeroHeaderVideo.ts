@@ -27,8 +27,7 @@ export default defineField({
     defineField({
       name: 'videoId',
       type: 'videoID',
-      title: 'Filmik',
-      validation: Rule => Rule.required(),
+      title: 'ID Filmiku Vimeo',
     }),
     defineField({
       name: 'authorName',

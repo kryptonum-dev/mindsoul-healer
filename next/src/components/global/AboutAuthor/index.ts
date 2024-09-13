@@ -16,7 +16,6 @@ export const AboutAuthor_Query = /* groq */ `
             name,
             href,
         },
-        socialMedia[]
     },
 
 `;

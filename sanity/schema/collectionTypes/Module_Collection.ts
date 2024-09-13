@@ -29,8 +29,8 @@ export default defineField({
       validation: Rule => Rule.required().min(1).error('Moduł musi zawierać przynajmniej jedną lekcję'),
       of: [
         defineField({
-          name: 'lessonName',
-          type: 'string',
+          name: 'markdown',
+          type: 'text',
           title: 'Nazwa lekcja',
         }),
       ],

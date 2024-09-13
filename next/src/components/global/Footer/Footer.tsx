@@ -1,42 +1,29 @@
 import getLegalLinks from '@/utils/get-legal-links';
-import sanityFetch from '@/utils/sanity.fetch';
-import type { PlatformType } from '@/global/types';
+import { getSocials } from '@/utils/get-socials';
 import Logo from '@/components/ui/Logo';
 import SocialLink from '@/components/ui/SocialLink';
 import TextLink from '@/components/ui/TextLink';
 import styles from './Footer.module.scss';
 import CookieButton from './_CookieButton';
 
-type FooterSocialsTypes = { _type: PlatformType; url: string }[];
-
-async function fetchSocials(): Promise<FooterSocialsTypes> {
-  return await sanityFetch({
-    query: /* groq */ `
-     *[_id == 'global'][0].footer.socialMedia
-    `,
-    tags: ['global'],
-  });
-}
-
 export default async function Footer() {
   const { termsAndConditions, privacyPolicy } = await getLegalLinks();
-  const socials = await fetchSocials();
-
+  const socials = await getSocials(['tiktok', 'instagram', 'youtube']);
   return (
     <footer className={styles.footer}>
       <div className='max-width'>
         <div className={styles.row}>
           <Logo />
           <nav className={styles.socials}>
-            {socials.map(({ _type, url }, i) => (
+            {socials.map(({ name, href }, i) => (
               <SocialLink
                 style={{ zIndex: `${20 - i}` }}
                 key={i}
-                href={url}
+                href={href}
                 target='_blank'
                 rel='norefferer'
-                aria-label={`Link do ${_type}`}
-                platform={_type}
+                aria-label={`Link do ${name}`}
+                platform={name}
               />
             ))}
           </nav>

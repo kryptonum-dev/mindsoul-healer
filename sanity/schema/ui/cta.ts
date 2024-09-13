@@ -9,7 +9,7 @@ export default defineField({
     defineField({
       name: 'theme',
       type: 'string',
-      title: 'Gatunek',
+      title: 'Rodzaj',
       options: {
         list: [
           { value: 'primary', title: 'Główne' },
@@ -18,6 +18,7 @@ export default defineField({
         layout: 'radio',
         direction: 'horizontal',
       },
+      initialValue: 'primary',
       validation: Rule => Rule.required(),
     }),
     defineField({

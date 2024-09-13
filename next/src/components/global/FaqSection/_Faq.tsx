@@ -29,7 +29,7 @@ export default function Faq({ list, PlusIcon, MinusIcon, UserIcon, CartIcon }: F
               animate={{ height: openIndex === i ? 'auto' : 0 }}
               exit={{ height: 0 }}
               transition={{
-                duration: 0.3,
+                duration: 0.25,
                 ease: EASING,
               }}
               className={styles.container}

@@ -55,10 +55,7 @@ export default async function ModuleList({
                 <ul className={styles.lessonList} key={moduleIndex}>
                   {lessonList?.map((name, lessonIndex) => (
                     <Fragment key={lessonIndex}>
-                      <li className={styles.lesson}>
-                        <BulletList />
-                        <span>{name}</span>
-                      </li>
+                      <li className='listItem'>{name}</li>
                       {moduleIndex === 0 && lessonIndex === 0 && (
                         <Form
                           {...form}

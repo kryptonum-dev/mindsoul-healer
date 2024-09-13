@@ -1,5 +1,5 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
-import { CollapseMenu, defineField } from 'sanity';
+import { defineField } from 'sanity';
 
 export default defineField({
   name: 'ModuleList',
@@ -70,7 +70,7 @@ export default defineField({
         defineField({
           name: 'videoID',
           type: 'videoID',
-          title: 'ID Filmiku',
+          title: 'ID Filmiku Vimeo',
           validation: Rule => Rule.required(),
         }),
         defineField({

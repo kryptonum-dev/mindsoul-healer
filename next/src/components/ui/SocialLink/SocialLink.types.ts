@@ -1,5 +1,5 @@
 import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
-import { PlatformType } from '@/global/types';
+import { PlatformType } from '@/utils/get-socials';
 
 export type SocialLinkTypes = { platform: PlatformType } & DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,

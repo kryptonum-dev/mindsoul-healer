@@ -1,4 +1,4 @@
-import { PlatformType } from '@/global/types';
+import { PlatformType } from '@/utils/get-socials';
 import styles from './SocialLink.module.scss';
 import type { SocialLinkTypes } from './SocialLink.types';
 

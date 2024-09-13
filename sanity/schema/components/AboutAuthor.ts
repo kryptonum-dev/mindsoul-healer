@@ -69,11 +69,6 @@ export default defineField({
         }),
       ],
     }),
-    defineField({
-      name: 'socialMedia',
-      type: 'socialMedia',
-      title: 'Social Media',
-    }),
   ],
   preview: {
     select: {
