@@ -16,6 +16,11 @@
       width: 100%;
     }
 
+    div {
+      position: absolute;
+      inset: 0;
+    }
+
     video {
       position: absolute;
       inset: 0;

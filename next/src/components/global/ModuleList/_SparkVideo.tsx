@@ -1,20 +1,22 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { SparkVideoTypes } from './ModuleList.types';
 
 export default function SparkVideo({ url }: SparkVideoTypes) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState<boolean>(false);
 
   useEffect(() => {
     const videoElement = videoRef.current;
-    let isInView = false;
+    const containerElement = containerRef.current;
+
     let isScrolling = false;
     let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
 
-    if (!videoElement) return;
-
     const checkPlayPause = () => {
+      if (!videoElement) return;
       if (isInView && isScrolling) {
         videoElement.play();
       } else if (!videoElement.paused) {
@@ -23,14 +25,14 @@ export default function SparkVideo({ url }: SparkVideoTypes) {
     };
 
     const handleInView: IntersectionObserverCallback = ([entry]) => {
-      isInView = entry.isIntersecting;
+      setIsInView(entry.isIntersecting);
       checkPlayPause();
     };
 
     const observer = new IntersectionObserver(handleInView);
 
-    if (videoElement) {
-      observer.observe(videoElement);
+    if (containerElement) {
+      observer.observe(containerRef.current);
     }
 
     const handleScroll = () => {
@@ -57,5 +59,5 @@ export default function SparkVideo({ url }: SparkVideoTypes) {
     };
   }, []);
 
-  return <video ref={videoRef} autoPlay muted loop playsInline preload='auto' src={url} />;
+  return <div ref={containerRef}>{isInView && <video ref={videoRef} autoPlay muted loop playsInline src={url} />}</div>;
 }
