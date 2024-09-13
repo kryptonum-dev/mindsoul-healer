@@ -7,9 +7,9 @@
   overflow-x: clip;
   color: var(--neutral-800, #070101);
   transition:
-    background-color 0.2s var(--easing),
-    border-color 0.2s var(--easing),
-    color 0.2s var(--easing);
+    background-color 0.15s var(--easing),
+    border-color 0.15s var(--easing),
+    color 0.15s var(--easing);
 
   .row {
     font-size: calc(13rem / 16);
@@ -41,7 +41,7 @@
     height: 2px;
     left: -100%;
     bottom: 0px;
-    transition: transform 0.2s var(--easing);
+    transition: transform 0.15s var(--easing);
   }
 
   &::after {

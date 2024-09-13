@@ -1,5 +1,6 @@
 'use client';
 
+import { sendResendMail } from '../../../actions';
 import { useEffect, useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import { REGEX } from '@/global/constants';
@@ -40,11 +41,8 @@ export default function Question({ privacyPolicy, ArrowIcon, index }: QuestionFo
   const onSubmit = async (data: FieldValues) => {
     setQuestionSubmited(false);
     setStatus({ sending: true, success: undefined });
-    await new Promise(resolve => {
-      setTimeout(resolve, 1000);
-    });
-    const isSuccess = true;
-    setStatus({ sending: false, success: isSuccess });
+    const status = await sendResendMail({ email: data.email, legal: data.legal, message: data.message });
+    setStatus({ sending: false, success: status.success });
     reset();
   };
 

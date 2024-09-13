@@ -12,7 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={LOCALE}>
-      <body className={Gentium.variable}>
+      <body className={Gentium.className}>
         <Header />
         {children}
         <SchemaOrganization />

@@ -27,8 +27,8 @@
       bottom: 0;
       z-index: 3;
       transition:
-        transform 0.2s var ease-out 0.16s,
-        background-color 0.2s var(--easing);
+        transform 0.15s var ease-out 0.16s,
+        background-color 0.15s var(--easing);
       background-color: var(--neutral-300, #ccc);
     }
 
@@ -51,7 +51,7 @@
     right: 0%;
     padding: 2px;
     background-color: var(--neutral-300, #ccc);
-    transition: transform 0.2s ease-out;
+    transition: transform 0.15s ease-out;
     overflow: hidden;
 
     svg {
@@ -66,7 +66,7 @@
       left: 0%;
       bottom: -100%;
       background-color: var(--neutral-100, #fcfcfc);
-      transition: transform 0.2s var(--easing);
+      transition: transform 0.15s var(--easing);
       z-index: -1;
     }
   }
@@ -74,7 +74,7 @@
   &:hover {
     .content {
       &::before {
-        transition: transform 0.2s var(--easing);
+        transition: transform 0.15s var(--easing);
         transform: translateX(100%);
       }
     }
@@ -82,7 +82,7 @@
     .arrow {
       transform: translateX(100%);
       transition:
-        transform 0.2s ease-out 0.16s,
+        transform 0.15s ease-out 0.16s,
         background-color 0.3s var(--easing);
     }
   }

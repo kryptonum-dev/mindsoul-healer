@@ -13,7 +13,7 @@
     img {
       width: 100%;
       height: 100%;
-      transition: transform 0.2s var(--easing);
+      transition: transform 0.15s var(--easing);
 
       &:hover {
         transform: scale(1.02);
@@ -33,7 +33,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       transition:
-        transform 0.2s var(--easing),
+        transform 0.15s var(--easing),
         opacity 0.3s var(--easing);
 
       svg {
@@ -90,7 +90,7 @@
       transform: translate(-50%, -50%);
       z-index: 20;
       opacity: 0;
-      transition: opacity 0.2s var(--easing);
+      transition: opacity 0.15s var(--easing);
     }
 
     .stop {

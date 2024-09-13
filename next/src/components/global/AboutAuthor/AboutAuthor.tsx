@@ -40,6 +40,7 @@ export default function AboutAuthor({
               key={i}
               href={url}
               target='_blank'
+              rel='norefferer'
               aria-label={`Link do ${_type}`}
               platform={_type}
             />

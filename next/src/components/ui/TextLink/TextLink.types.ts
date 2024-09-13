@@ -1,3 +1,3 @@
 import { AnchorHTMLAttributes } from 'react';
 
-export type TextLinkTypes = { children: string } & AnchorHTMLAttributes<HTMLAnchorElement>;
+export type TextLinkTypes = { children: string; href: string } & AnchorHTMLAttributes<HTMLAnchorElement>;

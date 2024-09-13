@@ -11,7 +11,7 @@
 
   --success-400: #38a35c;
 
-  --easing: cubic-bezier(0.11, 0, 0.5, 0);
+  --easing: cubic-bezier(0.65, 0.05, 0.36, 1);
 
   --pageMargin: clamp(16px, calc(32vw / 7.68), 40px);
   @media (max-width: 899px) and (min-width: 600px) {
@@ -141,7 +141,6 @@ body {
   background-color: var(--neutral-200, #efefef);
   font-size: calc(16rem / 16);
   line-height: 170%;
-  font-family: var(--font-gentium);
   font-display: swap;
 }
 

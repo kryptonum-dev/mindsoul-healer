@@ -44,7 +44,7 @@
 
         .cookies {
           position: relative;
-          transition: color 0.2s var(--easing);
+          transition: color 0.15s var(--easing);
           overflow: hidden;
           z-index: 5;
           padding: 2px 4px;
@@ -57,7 +57,7 @@
             height: 100%;
             left: -100%;
             background-color: var(--neutral-200, #efefef);
-            transition: transform 0.2s var(--easing);
+            transition: transform 0.15s var(--easing);
             z-index: -1;
           }
 

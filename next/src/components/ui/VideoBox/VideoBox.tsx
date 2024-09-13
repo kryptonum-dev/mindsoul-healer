@@ -17,11 +17,10 @@ export default function VideoBox({
   const videoRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
-    console.log(videoRef.current);
     if (videoRef.current) {
       const player = new Player(videoRef.current);
 
-      player.on('pause', () => {
+      player.on('ended', () => {
         setIsOpen(false);
         setShowPlayButton(true);
       });
@@ -66,7 +65,6 @@ export default function VideoBox({
               onClick={() => {
                 setIsOpen(false);
                 setShowPlayButton(true);
-                console.log(1);
               }}
             ></button>
           )}

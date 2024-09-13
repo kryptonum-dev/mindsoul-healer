@@ -20,9 +20,8 @@ export default async function ModuleList({
   video,
 }: ModuleListTypes) {
   const { privacyPolicy } = await getLegalLinks();
-
-
   const Subheading = index === 0 ? 'h2' : 'h3';
+
   return (
     <section className={styles.section}>
       <div className={styles.image}>

@@ -18,11 +18,7 @@ export default function Faq({ list, PlusIcon, MinusIcon, UserIcon, CartIcon }: F
     <div className={styles.faq}>
       {list.map(({ question, answer, image, cta }, i) => (
         <div key={i} className={styles.box} onClick={e => handleClick(e, i)}>
-          {image ? (
-            <Img data={image} sizes='(max-width: 579px) 32px, 40px' />
-          ) : (
-            <div className={styles.user}>{UserIcon}</div>
-          )}
+          {image ? <Img data={image} sizes='40px' /> : <div className={styles.user}>{UserIcon}</div>}
           <details open data-open={openIndex === i}>
             <summary tabIndex={openIndex === i ? -1 : 0}>
               {question}

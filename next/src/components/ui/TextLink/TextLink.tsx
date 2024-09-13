@@ -1,12 +1,13 @@
 import Link from 'next/link';
+import { isExternalLink } from '@/utils/is-external-link';
 import styles from './TextLink.module.scss';
 import type { TextLinkTypes } from './TextLink.types';
 
-export default function TextLink({ children, ...props }: TextLinkTypes) {
+export default function TextLink({ children, href, ...props }: TextLinkTypes) {
   return (
-    <Link href={props.href!} className={styles.link} {...props}>
+    <Link href={href} className={styles.link} {...props}>
       {children}
-      {props.target === '_blank' && <ArrowIcon />}
+      {isExternalLink(href) && <ArrowIcon />}
     </Link>
   );
 }
