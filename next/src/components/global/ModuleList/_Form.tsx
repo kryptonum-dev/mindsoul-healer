@@ -1,5 +1,6 @@
 'use client';
 
+import { createSubscriber } from '../../../actions';
 import { useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import { REGEX } from '@/global/constants';
@@ -38,11 +39,8 @@ export default function Form({ buttonText, heading, privacyPolicy, index, thumbn
 
   const onSubmit = async (data: FieldValues) => {
     setStatus({ sending: true, success: undefined });
-    await new Promise(resolve => {
-      setTimeout(resolve, 500);
-    });
-    const isSuccess = true;
-    setStatus({ sending: false, success: isSuccess });
+    const status = await createSubscriber({ email: data.email, legal: data.legal });
+    setStatus({ sending: false, success: status.success });
     reset();
   };
 
