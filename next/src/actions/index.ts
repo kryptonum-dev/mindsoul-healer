@@ -13,7 +13,6 @@ type ContactProps = {
 
 export async function sendResendMail({ email, message, legal }: ContactProps) {
   const resend = new Resend(process.env.RESEND_API_TOKEN);
-
   const isValid = email && REGEX.email.test(email) && message && legal;
 
   if (!isValid) return { success: false };
