@@ -37,7 +37,7 @@ export default async function sanityFetch<QueryResponse>({
           cache: 'reload',
         }
       : {
-          ...(isPreviewDeployment || !tags
+          ...(!tags
             ? {
                 cache: 'no-cache',
               }
