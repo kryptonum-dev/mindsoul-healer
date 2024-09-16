@@ -9,15 +9,16 @@ export default function SparkVideo({ url }: SparkVideoTypes) {
   const [isInView, setIsInView] = useState<boolean>(false);
 
   useEffect(() => {
-    const videoElement = videoRef.current;
     const containerElement = containerRef.current;
-
+    let inView = false;
     let isScrolling = false;
     let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
 
     const checkPlayPause = () => {
+      const videoElement = videoRef.current;
+
       if (!videoElement) return;
-      if (isInView && isScrolling) {
+      if (inView && isScrolling) {
         videoElement.play();
       } else if (!videoElement.paused) {
         videoElement.pause();
@@ -25,6 +26,7 @@ export default function SparkVideo({ url }: SparkVideoTypes) {
     };
 
     const handleInView: IntersectionObserverCallback = ([entry]) => {
+      inView = entry.isIntersecting;
       setIsInView(entry.isIntersecting);
       checkPlayPause();
     };
@@ -53,8 +55,8 @@ export default function SparkVideo({ url }: SparkVideoTypes) {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (videoElement) {
-        observer.unobserve(videoElement);
+      if (containerElement) {
+        observer.unobserve(containerElement);
       }
     };
   }, []);
