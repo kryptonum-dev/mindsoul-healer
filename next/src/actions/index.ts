@@ -28,7 +28,7 @@ export async function sendResendMail({ email, message, legal }: ContactProps) {
 
   try {
     await resend.emails.send({
-      from: `${email} przez Formularz <formularz@mindsoulhealer.pl>`,
+      from: `${email} przez Formularz <formularz@sending.mindsoulhealer.pl>`,
       to: 'ali@mindsoulhealer.pl',
       replyTo: email,
       subject: `${email} przesyła wiadomość przez formularz kontaktowy`,

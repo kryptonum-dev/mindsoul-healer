@@ -23,7 +23,7 @@ export default async function ModuleList({
   const Subheading = index === 0 ? 'h2' : 'h3';
 
   return (
-    <section className={styles.section}>
+    <section id='modules' className={styles.section}>
       <div className={styles.image}>
         <Img
           data={image}
