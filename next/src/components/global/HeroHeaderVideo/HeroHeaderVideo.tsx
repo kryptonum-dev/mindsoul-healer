@@ -15,8 +15,6 @@ export default function HeroHeaderVideo({
   authorName,
   index,
 }: HeroHeaderVideoTypes) {
-  return null;
-
   return (
     <section className={styles.section}>
       <div className='max-width'>
