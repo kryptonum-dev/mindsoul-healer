@@ -1,4 +1,5 @@
 import { LOCALE } from '@/global/constants';
+import { Gentium } from '@/global/fonts';
 import '@/global/global.scss';
 import SchemaOrganization from '@/global/schema/Organization';
 import CookieConsent from '@/components/global/CookieConsent';
@@ -11,7 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={LOCALE}>
-      <body>
+      <body className={Gentium.className}>
         <Header />
         {children}
         <SchemaOrganization />
