@@ -9,6 +9,7 @@ import QuestionSection from '../schema/components/QuestionSection';
 import SimpleGridList from '../schema/components/SimpleGridList';
 import SimpleStaggeredGrid from '../schema/components/SimpleStaggeredGrid';
 import TwoBoxesCta from '../schema/components/TwoBoxesCta';
+import VideoEmbedHeading from '../schema/components/VideoEmbedHeading';
 import { defineType } from 'sanity';
 
 export default defineType({
@@ -27,5 +28,6 @@ export default defineType({
     TwoBoxesCta,
     FaqSection,
     QuestionSection,
+    VideoEmbedHeading,
   ],
 });

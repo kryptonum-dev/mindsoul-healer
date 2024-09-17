@@ -9,6 +9,7 @@ import QuestionSection, { QuestionSectionTypes, QuestionSection_Query } from './
 import SimpleGridList, { SimpleGridListTypes, SimpleGridList_Query } from './global/SimpleGridList';
 import SimpleStaggeredGrid, { SimpleStaggeredGridTypes, SimpleStaggeredGrid_Query } from './global/SimpleStaggeredGrid';
 import TwoBoxesCta, { TwoBoxesCtaTypes, TwoBoxesCta_Query } from './global/TwoBoxesCta';
+import VideoEmbedHeading, { VideoEmbedHeadingTypes, VideoEmbedHeading_Query } from './global/VideoEmbedHeading';
 
 type componentsMapTypes = {
   HeroHeaderVideo: HeroHeaderVideoTypes;
@@ -22,6 +23,7 @@ type componentsMapTypes = {
   TwoBoxesCta: TwoBoxesCtaTypes;
   FaqSection: FaqSectionTypes;
   QuestionSectionTypes: QuestionSectionTypes;
+  VideoEmbedHeading: VideoEmbedHeadingTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string; index: number };
@@ -42,6 +44,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       TwoBoxesCta: <TwoBoxesCta {...(item as TwoBoxesCtaTypes)} />,
       FaqSection: <FaqSection {...(item as FaqSectionTypes)} />,
       QuestionSection: <QuestionSection {...(item as QuestionSectionTypes)} />,
+      VideoEmbedHeading: <VideoEmbedHeading {...(item as VideoEmbedHeadingTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -63,5 +66,6 @@ export const Components_Query = /* groq */ `
       ${TwoBoxesCta_Query}
       ${FaqSection_Query}
       ${QuestionSection_Query}
+      ${VideoEmbedHeading_Query}
     },
   `;

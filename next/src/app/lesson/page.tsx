@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import sanityFetch from '@/utils/sanity.fetch';
 import { QueryMetadata } from '@/global/seo/query-metadata';
 import Components, { ComponentTypes, Components_Query } from '@/components/Components';
+import Footer from '@/components/global/Footer';
 
 const query = async (): Promise<{ content: ComponentTypes[] }> => {
   return await sanityFetch({
@@ -25,7 +26,10 @@ export default async function Lesson({ searchParams }: { searchParams: { token: 
 
   return (
     <>
-      <Components data={content} />
+      <main>
+        <Components data={content} />
+      </main>
+      <Footer />
     </>
   );
 }
