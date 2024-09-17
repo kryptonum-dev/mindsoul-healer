@@ -18,7 +18,6 @@ export default defineField({
         layout: 'radio',
         direction: 'horizontal',
       },
-      initialValue: 'primary',
       validation: Rule => Rule.required(),
     }),
     defineField({
