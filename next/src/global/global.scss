@@ -132,14 +132,20 @@ html {
 
 @font-face {
   font-family: 'Gentium_Plus';
-  src: url('../../assets/fonts/GentiumPlus-Regular.woff2') format('woff2');
+  src:
+    url('../../assets/fonts/GentiumPlus-Regular.woff2') format('woff2'),
+    url('../../assets/fonts/GentiumPlus-Regular.woff') format('woff'),
+    url('../../assets/fonts/GentiumPlus-Regular.ttf') format('ttf');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gentium_Plus';
-  src: url('../../assets/fonts/GentiumPlus-Bold.woff2') format('woff2');
+  src:
+    url('../../assets/fonts/GentiumPlus-Bold.woff2') format('woff2'),
+    url('../../assets/fonts/GentiumPlus-Bold.woff') format('woff'),
+    url('../../assets/fonts/GentiumPlus-Bold.ttf') format('ttf');
   font-weight: 700;
   font-style: normal;
 }
