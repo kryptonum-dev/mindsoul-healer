@@ -15,11 +15,11 @@ const query = async (): Promise<{ content: ComponentTypes[] }> => {
 };
 
 export default async function Lesson({ searchParams }: { searchParams: { token: string } }) {
-  if (!searchParams.token) notFound();
+  // if (!searchParams.token) notFound();
 
-  const isValidToken = await verifyTokenWithMailerLite(searchParams.token);
+  // const isValidToken = await verifyTokenWithMailerLite(searchParams.token);
 
-  if (!isValidToken) notFound();
+  // if (!isValidToken) notFound();
 
   const { content } = await query();
 
@@ -34,25 +34,25 @@ export async function generateMetadata() {
   return await QueryMetadata({ name: 'Lesson_Page', path: '' });
 }
 
-const verifyTokenWithMailerLite = async (token: string): Promise<boolean> => {
-  try {
-    const res = await fetch('https://api.mailerlite.com/api/v2/subscribers', {
-      headers: {
-        'X-MailerLite-ApiKey': process.env.MAILERLITE_API_KEY!,
-        'Content-Type': 'application/json',
-      },
-    });
+// const verifyTokenWithMailerLite = async (token: string): Promise<boolean> => {
+//   try {
+//     const res = await fetch('https://api.mailerlite.com/api/v2/subscribers', {
+//       headers: {
+//         'X-MailerLite-ApiKey': process.env.MAILERLITE_API_KEY!,
+//         'Content-Type': 'application/json',
+//       },
+//     });
 
-    const response = await res.json();
+//     const response = await res.json();
 
-    const subscriber = response.find(
-      (sub: { fields: [{ key: string; value: string }] }) =>
-        sub.fields.find(field => field.key === 'user_token')?.value === token
-    );
+//     const subscriber = response.find(
+//       (sub: { fields: [{ key: string; value: string }] }) =>
+//         sub.fields.find(field => field.key === 'user_token')?.value === token
+//     );
 
-    return !!subscriber;
-  } catch (error) {
-    console.error('Wystąpił problem z weryfikacją tokenu', error);
-    return false;
-  }
-};
+//     return !!subscriber;
+//   } catch (error) {
+//     console.error('Wystąpił problem z weryfikacją tokenu', error);
+//     return false;
+//   }
+// };
