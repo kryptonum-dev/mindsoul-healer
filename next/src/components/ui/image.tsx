@@ -69,7 +69,6 @@ export default function Img({ data, src, width, height, alt, sizes, priority, ..
       alt={alt || ''}
       sizes={sizes}
       loading={priority ? 'eager' : 'lazy'}
-      priority={priority}
       {...((width! > 40 || height! > 40) && {
         blurDataURL: placeholder,
         placeholder: 'blur',
