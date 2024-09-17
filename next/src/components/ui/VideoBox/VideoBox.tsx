@@ -15,8 +15,6 @@ export default function VideoBox({
   const [showPlayButton, setShowPlayButton] = useState<boolean>(true);
   const videoRef = useRef<HTMLIFrameElement>(null);
 
-  return null;
-
   return (
     <div className={styles.videoBox}>
       <button
