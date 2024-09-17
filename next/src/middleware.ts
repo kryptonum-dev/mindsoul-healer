@@ -8,13 +8,13 @@ export async function middleware(request: NextRequest) {
     const token = request.nextUrl.searchParams.get('token');
 
     if (!token) {
-      return notFound();
+      return NextResponse.rewrite(new URL('/404', request.url));
     }
 
     const isValidToken = await verifyTokenWithMailerLite(token);
 
     if (!isValidToken) {
-      return notFound();
+      return NextResponse.rewrite(new URL('/404', request.url));
     }
 
     return NextResponse.next();
