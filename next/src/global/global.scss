@@ -130,6 +130,20 @@ html {
   margin: 0 auto;
 }
 
+@font-face {
+  font-family: 'Gentium_Plus';
+  src: url('../../assets/fonts/GentiumPlus-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gentium_Plus';
+  src: url('../../assets/fonts/GentiumPlus-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
 body {
   overflow: clip;
   min-width: 320px;
@@ -141,6 +155,7 @@ body {
   background-color: var(--neutral-200, #efefef);
   font-size: calc(16rem / 16);
   line-height: 170%;
+  font-family: 'Gentium_Plus', serif;
 }
 
 main {
