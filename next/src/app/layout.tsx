@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang={LOCALE}>
       <body className={Gentium.className}>
-        {/* <Header /> */}
+        <Header />
         {children}
         <SchemaOrganization />
         <CookieConsent />

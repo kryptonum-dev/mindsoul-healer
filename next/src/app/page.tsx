@@ -23,7 +23,7 @@ export default async function Home() {
   return (
     <>
       <main id='main'>{<Components data={content} />}</main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
