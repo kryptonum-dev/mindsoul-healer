@@ -50,7 +50,7 @@ export async function createSubscriber({ email, legal }: CreateSubscriberParams)
 
   if (!isValid) return { success: false };
 
-  const params = { email, groups: ['132613531520468195'] };
+  const params = { email, groups: ['132613531520468195'], fields: { user_token: crypto.randomUUID() } };
 
   try {
     await mailerlite.subscribers.createOrUpdate(params);
