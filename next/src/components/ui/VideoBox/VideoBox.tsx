@@ -1,6 +1,5 @@
 'use client';
 
-import Player from '@vimeo/player';
 import { useEffect, useRef, useState } from 'react';
 import styles from './VideoBox.module.scss';
 import type { VideoBoxTypes } from './VideoBox.types';
@@ -15,21 +14,6 @@ export default function VideoBox({
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showPlayButton, setShowPlayButton] = useState<boolean>(true);
   const videoRef = useRef<HTMLIFrameElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      const player = new Player(videoRef.current);
-
-      player.on('ended', () => {
-        setIsOpen(false);
-        setShowPlayButton(true);
-      });
-
-      return () => {
-        player.off('ended');
-      };
-    }
-  }, [videoRef, isOpen]);
 
   return (
     <div className={styles.videoBox}>
