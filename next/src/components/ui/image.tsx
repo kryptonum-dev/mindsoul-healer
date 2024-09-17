@@ -1,4 +1,3 @@
-import { url } from 'inspector';
 import NextImage from 'next/image';
 
 const defaultPlaceholder =
@@ -69,6 +68,7 @@ export default function Img({ data, src, width, height, alt, sizes, priority, ..
       height={height}
       alt={alt || ''}
       sizes={sizes}
+      loading={priority ? 'eager' : 'lazy'}
       priority={priority}
       {...((width! > 40 || height! > 40) && {
         blurDataURL: placeholder,
