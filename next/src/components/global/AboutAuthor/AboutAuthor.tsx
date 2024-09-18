@@ -30,7 +30,7 @@ export default async function AboutAuthor({
           <div>
             {list.map(({ name, href }, i) => (
               <a key={i} href={href} target='_blank' rel='norefferer'>
-                {name}
+                <span>{name}</span>
               </a>
             ))}
           </div>
@@ -43,7 +43,6 @@ export default async function AboutAuthor({
               href={href}
               target='_blank'
               rel='norefferer'
-              aria-label={`Link do ${name}`}
               platform={name}
             />
           ))}

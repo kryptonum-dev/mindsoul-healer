@@ -1,4 +1,5 @@
 import { GoogleTagManager } from '@next/third-parties/google';
+import { Toaster } from 'sonner';
 import { LOCALE } from '@/global/constants';
 import '@/global/global.scss';
 import SchemaOrganization from '@/global/schema/Organization';
@@ -16,9 +17,9 @@ export default function RootLayout({
         <Header />
         {children}
         <SchemaOrganization />
+        <Toaster richColors position='bottom-center' />
         <CookieConsent />
-        {/* {process.env.NODE_ENV === 'production' && <GoogleTagManager gtmId='GTM-M6FZ4BW6' />} */}
-        <GoogleTagManager gtmId='GTM-N8D87DNB' />
+        {process.env.NODE_ENV === 'production' && <GoogleTagManager gtmId='GTM-M6FZ4BW6' />}
       </body>
     </html>
   );

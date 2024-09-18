@@ -83,7 +83,7 @@ export default function Form({ buttonText, heading, privacyPolicy, index, thumbn
           })}
           errors={errors}
         />
-        <Button tabIndex={tabIndex} type='submit'>
+        <Button shade='dark' tabIndex={tabIndex} type='submit'>
           {buttonText}
         </Button>
       </form>

@@ -49,7 +49,7 @@ export default async function ModuleList({
                   </Subheading>
                   <p className={styles.duration}>
                     <ClockIcon />
-                    <span>{moduleDuration} min</span>
+                    <time>{moduleDuration} min</time>
                   </p>
                 </header>
                 <ul className={styles.lessonList} key={moduleIndex}>

@@ -55,7 +55,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            left: -100%;
+            left: -110%;
             background-color: var(--neutral-200, #efefef);
             transition: transform 0.15s var(--easing);
             z-index: -1;
@@ -64,7 +64,7 @@
           &:hover {
             color: var(--neutral-800, #070101);
             &::before {
-              transform: translateX(100%);
+              transform: translateX(110%);
             }
           }
         }

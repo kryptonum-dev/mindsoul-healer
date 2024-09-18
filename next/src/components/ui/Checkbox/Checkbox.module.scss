@@ -12,9 +12,13 @@
     opacity: 0;
   }
 
+  a {
+    text-decoration: underline;
+  }
+
   .icon {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     position: relative;
     transition: background-color 0.1s var(--easing);
 

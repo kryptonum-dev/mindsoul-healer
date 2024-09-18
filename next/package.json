@@ -22,7 +22,8 @@
     "react-hook-form": "^7.53.0",
     "resend": "^4.0.0",
     "sass": "^1.77.8",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "sonner": "^1.5.0"
   },
   "resolutions": {
     "inquirer": "9.3.5"
