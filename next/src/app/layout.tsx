@@ -1,3 +1,4 @@
+import { GoogleTagManager } from '@next/third-parties/google';
 import { LOCALE } from '@/global/constants';
 import '@/global/global.scss';
 import SchemaOrganization from '@/global/schema/Organization';
@@ -16,6 +17,8 @@ export default function RootLayout({
         {children}
         <SchemaOrganization />
         <CookieConsent />
+        {/* {process.env.NODE_ENV === 'production' && <GoogleTagManager gtmId='GTM-M6FZ4BW6' />} */}
+        <GoogleTagManager gtmId='GTM-N8D87DNB' />
       </body>
     </html>
   );
