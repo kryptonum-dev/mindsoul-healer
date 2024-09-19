@@ -49,6 +49,28 @@ export default function Content() {
     } else {
       gtag('consent', 'default', JSON.parse(getCookie('cookie-consent')!));
     }
+
+    const timeoutId = setTimeout(async () => {
+      try {
+        gtag('event', 'view_item', {
+          value: 97,
+          currency: 'PLN',
+          items: [
+            {
+              item_id: '7d1eddb6-4f60-4965-9914-c9ad05daf607',
+              item_name: 'Mind&Soul Healer | Kurs Online',
+              item_brand: 'Mind&Soul Healer',
+              price: 97,
+              quantity: 1,
+            },
+          ],
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }, 1000);
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const acceptAll = () => {

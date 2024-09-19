@@ -53,38 +53,46 @@
         flex-wrap: wrap;
 
         a {
-          position: relative;
-          padding: 4px 9px;
+          display: flex;
+          align-items: center;
           overflow: hidden;
-          display: inline-block;
+
+          height: 44px;
           z-index: 5;
           transition: color 0.15s var(--easing);
 
-          &::before {
-            content: '';
-            inset: 0;
-            position: absolute;
-            z-index: -3;
-            background-color: var(--neutral-100, #fcfcfc);
-          }
+          span {
+            padding: 5px 9px;
+            align-items: center;
+            position: relative;
+            display: inline-block;
 
-          &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background-color: var(--neutral-800, #070101);
-            transition: transform 0.15s var(--easing);
-          }
-
-          &:hover {
-            color: var(--neutral-200, #fcfcfc) !important;
+            &::before {
+              content: '';
+              inset: 0;
+              position: absolute;
+              z-index: -3;
+              background-color: var(--neutral-100, #fcfcfc);
+            }
 
             &::after {
-              transform: translateX(100%);
+              content: '';
+              position: absolute;
+              top: 0;
+              left: -110%;
+              width: 100%;
+              height: 100%;
+              z-index: -2;
+              background-color: var(--neutral-800, #070101);
+              transition: transform 0.15s var(--easing);
+            }
+          }
+          &:hover {
+            color: var(--neutral-200, #fcfcfc) !important;
+            span {
+              &::after {
+                transform: translateX(110%);
+              }
             }
           }
         }
@@ -94,7 +102,12 @@
     .socials {
       display: flex;
       align-items: center;
-      column-gap: 4px;
+
+      a {
+        &:focus-visible {
+          z-index: 150 !important;
+        }
+      }
     }
   }
 

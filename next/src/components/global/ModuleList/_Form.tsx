@@ -20,11 +20,11 @@ export default function Form({ buttonText, heading, privacyPolicy, index, thumbn
     errorState: {
       heading: 'Nie udało się dodać maila',
       paragraph:
-        'Podczas przesyłania informacji pojawił się problem z serwerem. Jeśli problem się powtórzy napisz na adres',
+        'Prawdopodobnie jest to jakiś problem z serwerem. Spróbuj ponownie teraz albo poczekaj i spróbuj za 5minut.',
     },
     successState: {
-      heading: 'Dziękuję za dodanie adresu e-mail',
-      paragraph: 'Wkrótce na twój adres e-mail zostanie wysłana wiadomość z pierwszą darmową lekcją',
+      heading: 'dzieli Cię już tylko jeden krok od obejrzenia lekcji',
+      paragraph: 'Potwierdź swojego maila i w następnym mailu otrzymaj dostęp do lekcji',
     },
   };
 
@@ -83,7 +83,7 @@ export default function Form({ buttonText, heading, privacyPolicy, index, thumbn
           })}
           errors={errors}
         />
-        <Button tabIndex={tabIndex} type='submit'>
+        <Button shade='dark' tabIndex={tabIndex} type='submit'>
           {buttonText}
         </Button>
       </form>

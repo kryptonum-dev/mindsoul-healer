@@ -3,6 +3,7 @@
 import { sendResendMail } from '../../../actions';
 import { useEffect, useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 import { REGEX } from '@/global/constants';
 import { FormStatusTypes } from '@/global/types';
 import Button from '@/components/ui/Button';
@@ -78,12 +79,15 @@ export default function Question({ privacyPolicy, ArrowIcon, index }: QuestionFo
             errors={errors}
           />
           <Button
-            disabled={!messageValue || messageValue.length < 10 || !!errors['message']?.message}
+            disabled={!!errors['message']?.message || status.sending}
             tabIndex={tabIndex}
             shade='gray'
             icon={ArrowIcon}
             type='button'
-            onClick={() => setQuestionSubmited(true)}
+            onClick={() => {
+              if (!messageValue) toast.error('Wiadomość musi zawierać minimum 10 znaków');
+              else setQuestionSubmited(true);
+            }}
           >
             Zadaj pytanie
           </Button>

@@ -22,7 +22,6 @@ export default async function Footer() {
                 href={href}
                 target='_blank'
                 rel='norefferer'
-                aria-label={`Link do ${name}`}
                 platform={name}
               />
             ))}
@@ -33,17 +32,32 @@ export default async function Footer() {
             <span className={styles.year}>{new Date().getFullYear()}</span>
             <p>
               Stworzone przez
-              <TextLink target='_blank' rel='norefferer' href='https://kryptonum.eu/pl'>
+              <TextLink
+                target='_blank'
+                rel='norefferer'
+                href='https://kryptonum.eu/pl'
+                aria-label='Link do strony twórcy, otwiera się w nowym oknie'
+              >
                 Kryptonum
               </TextLink>
             </p>
           </div>
           <div className={styles.links}>
             <CookieButton />
-            <TextLink href={termsAndConditions} target='_blank' rel='norefferer'>
+            <TextLink
+              href={termsAndConditions}
+              target='_blank'
+              rel='norefferer'
+              aria-label='Link do regulaminu, otwiera się w nowym oknie'
+            >
               Regulamin
             </TextLink>
-            <TextLink href={privacyPolicy} target='_blank' rel='norefferer'>
+            <TextLink
+              href={privacyPolicy}
+              target='_blank'
+              rel='norefferer'
+              aria-label='Link do polityki prywatności, otwiera się w nowym oknie'
+            >
               Polityka Prywatności
             </TextLink>
           </div>

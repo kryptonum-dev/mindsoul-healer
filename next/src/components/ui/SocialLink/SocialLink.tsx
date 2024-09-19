@@ -6,7 +6,7 @@ export default function SocialLink({ platform, ...props }: SocialLinkTypes) {
   if (!platform) return null;
 
   return (
-    <a className={styles.link} {...props}>
+    <a className={styles.link} {...props} aria-label={`Link do ${platform}, otwiera się w nowym oknie.`}>
       <span className={styles.content}>{selectPlatformIcon(platform)}</span>
       <span className={styles.arrow}>
         <ArrowIcon />

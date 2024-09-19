@@ -12,18 +12,20 @@ export default function SimpleGridList({ sectionHeading, list, image, preCtaText
         <Heading {...sectionHeading} hierarchy={index === 0 ? 'h1' : 'h2'} />
       </header>
       <div className={styles.container}>
-        <Img data={image} sizes='(max-width: 376px) 85vw, 310px' />
-        <div className={styles.box}>
-          <ul className={styles.list}>
-            {list.map((paragraph, i) => (
-              <li key={i} className={styles.item}>
-                <Markdown>{paragraph}</Markdown>
-              </li>
-            ))}
-          </ul>
-          <div className={styles.cta}>
-            <Markdown className={styles.preCta}>{preCtaText}</Markdown>
-            <Button icon={<FileIcon />} {...cta} shade='light' />
+        <div className={styles.col}>
+          <Img data={image} sizes='(max-width: 376px) 85vw, 310px' />
+          <div className={styles.box}>
+            <ul className={styles.list}>
+              {list.map((paragraph, i) => (
+                <li key={i} className={styles.item}>
+                  <Markdown>{paragraph}</Markdown>
+                </li>
+              ))}
+            </ul>
+            <div className={styles.cta}>
+              <Markdown className={styles.preCta}>{preCtaText}</Markdown>
+              <Button icon={<FileIcon />} {...cta} shade='light' />
+            </div>
           </div>
         </div>
       </div>

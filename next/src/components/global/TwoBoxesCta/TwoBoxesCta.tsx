@@ -14,7 +14,7 @@ export default function TwoBoxesCta({ sectionHeading, list, index }: TwoBoxesCta
       {list.map((item, i) => (
         <div className={styles.box} key={i} data-cta={item._type === 'ctaBlock'}>
           <Subheading>{item.heading}</Subheading>
-          <Markdown>{item.content}</Markdown>
+          <Markdown className={item._type === 'ctaBlock' ? 'dark' : ''}>{item.content}</Markdown>
           {item._type === 'ctaBlock' && <Button {...item.cta} icon={<CartIcon />} />}
         </div>
       ))}

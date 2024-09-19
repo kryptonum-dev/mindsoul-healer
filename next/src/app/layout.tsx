@@ -1,5 +1,6 @@
+import { GoogleTagManager } from '@next/third-parties/google';
+import { Toaster } from 'sonner';
 import { LOCALE } from '@/global/constants';
-import { Gentium } from '@/global/fonts';
 import '@/global/global.scss';
 import SchemaOrganization from '@/global/schema/Organization';
 import CookieConsent from '@/components/global/CookieConsent';
@@ -12,11 +13,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={LOCALE}>
-      <body className={Gentium.className}>
+      <body>
         <Header />
         {children}
         <SchemaOrganization />
+        <Toaster richColors position='bottom-center' />
         <CookieConsent />
+        {process.env.NODE_ENV === 'production' && <GoogleTagManager gtmId='GTM-M6FZ4BW6' />}
       </body>
     </html>
   );
