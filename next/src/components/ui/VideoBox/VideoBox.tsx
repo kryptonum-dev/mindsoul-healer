@@ -27,7 +27,7 @@ export default function VideoBox({
           }, closeTime * 1000)
         : null;
 
-    return clearTimeout(timeout as NodeJS.Timeout);
+    return () => clearTimeout(timeout as NodeJS.Timeout);
   }, [isOpen, isLoading]);
 
   return (
