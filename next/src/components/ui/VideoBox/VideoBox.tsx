@@ -8,12 +8,27 @@ export default function VideoBox({
   videoId,
   children,
   title,
+  closeTime,
   options = { controls: true, muted: false, loop: false },
 }: VideoBoxTypes) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showPlayButton, setShowPlayButton] = useState<boolean>(true);
   const videoRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    if (!closeTime) return;
+
+    const timeout =
+      isOpen && !isLoading
+        ? setTimeout(() => {
+            setIsOpen(false);
+            setShowPlayButton(true);
+          }, closeTime * 1000)
+        : null;
+
+    return clearTimeout(timeout as NodeJS.Timeout);
+  }, [isOpen, isLoading]);
 
   return (
     <div className={styles.videoBox}>
