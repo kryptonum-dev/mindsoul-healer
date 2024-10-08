@@ -5,4 +5,5 @@ export type VideoBoxTypes = {
   title: string;
   children: ReactNode;
   options?: { controls?: boolean; muted?: boolean; loop?: boolean };
+  closeTime?: number;
 };

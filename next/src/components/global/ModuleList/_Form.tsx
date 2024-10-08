@@ -48,7 +48,12 @@ export default function Form({ buttonText, heading, privacyPolicy, index, thumbn
     <li className={styles.newsletter}>
       <header>
         {heading}
-        <VideoBox title='Zwiastun bezpłatnej lekcji' videoId={video} options={{ muted: true, controls: false }}>
+        <VideoBox
+          title='Zwiastun bezpłatnej lekcji'
+          videoId={video}
+          options={{ muted: true, controls: false }}
+          closeTime={3}
+        >
           <Img sizes='' data={thumbnail} />
         </VideoBox>
       </header>
