@@ -21,7 +21,7 @@ export default function HeroHeaderVideo({
         <Heading {...sectionHeading} dark hierarchy={index === 0 ? 'h1' : 'h2'} />
         <Markdown className={`${styles.paragraph} dark`}>{paragraph}</Markdown>
         <div className={styles.box}>
-          <VideoBox title='Film powitalny' videoId={videoId}>
+          <VideoBox title='Film powitalny' videoId={videoId} options={{ loop: true }}>
             <Img data={image} sizes='(max-width: 659px) 328px, 381px' priority={index === 0} />
           </VideoBox>
           <Markdown className={styles.author}>{authorName}</Markdown>
