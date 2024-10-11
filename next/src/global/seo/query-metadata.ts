@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import sanityFetch from '@/utils/sanity.fetch';
 import Seo from '@/global/seo';
 import type { QueryMetadataTypes, QueryTypes } from './Seo.types';
@@ -38,5 +39,6 @@ const query = async (customQuery: string, tag: string): Promise<QueryTypes> => {
     `,
     tags: [tag],
   });
+  !seo && notFound();
   return { ...seo };
 };
