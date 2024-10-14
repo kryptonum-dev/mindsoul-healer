@@ -1,5 +1,5 @@
-import Button from '@/components/ui/Button';
 import Heading from '@/components/ui/Heading';
+import CtaButtonBox from '@/components/ui/ctaButtonBox/ctaButtonBox';
 import Markdown from '@/components/ui/markdown';
 import styles from './TwoBoxesCta.module.scss';
 import type { TwoBoxesCtaTypes } from './TwoBoxesCta.types';
@@ -15,7 +15,7 @@ export default function TwoBoxesCta({ sectionHeading, list, index }: TwoBoxesCta
         <div className={styles.box} key={i} data-cta={item._type === 'ctaBlock'}>
           <Subheading>{item.heading}</Subheading>
           <Markdown className={item._type === 'ctaBlock' ? 'dark' : ''}>{item.content}</Markdown>
-          {item._type === 'ctaBlock' && <Button {...item.cta} icon={<CartIcon />} />}
+          {item._type === 'ctaBlock' && <CtaButtonBox ctaButton={item.cta} dark={item._type === 'ctaBlock'} />}
         </div>
       ))}
     </section>

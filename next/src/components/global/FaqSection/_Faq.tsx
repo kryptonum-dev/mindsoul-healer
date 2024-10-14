@@ -1,10 +1,11 @@
 'use client';
 
+import Button from '@/components/ui/Button';
+import EasyCartInfo from '@/components/ui/EasyCartInfo';
+import Img from '@/components/ui/image';
+import { EASING } from '@/global/constants';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { EASING } from '@/global/constants';
-import Button from '@/components/ui/Button';
-import Img from '@/components/ui/image';
 import styles from './FaqSection.module.scss';
 import { FaqTypes } from './FaqSection.types';
 
@@ -36,7 +37,12 @@ export default function Faq({ list, PlusIcon, MinusIcon, UserIcon, CartIcon }: F
               onClick={e => e.stopPropagation()}
             >
               {answer}
-              {!!cta && <Button tabIndex={openIndex === i ? 0 : -1} {...cta} shade='dark' icon={CartIcon} />}
+              {!!cta && (
+                <div className={styles.cta}>
+                  <Button {...cta} tabIndex={openIndex === i ? 0 : -1} icon={CartIcon} shade='dark' />
+                  <EasyCartInfo />
+                </div>
+              )}
             </motion.div>
           </details>
         </div>
