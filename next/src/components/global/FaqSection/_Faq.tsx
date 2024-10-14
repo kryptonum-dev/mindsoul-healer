@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { EASING } from '@/global/constants';
-import Button from '@/components/ui/Button';
+import CtaButtonBox from '@/components/ui/ctaButtonBox/ctaButtonBox';
 import Img from '@/components/ui/image';
 import styles from './FaqSection.module.scss';
 import { FaqTypes } from './FaqSection.types';
@@ -36,7 +36,7 @@ export default function Faq({ list, PlusIcon, MinusIcon, UserIcon, CartIcon }: F
               onClick={e => e.stopPropagation()}
             >
               {answer}
-              {!!cta && <Button tabIndex={openIndex === i ? 0 : -1} {...cta} shade='dark' icon={CartIcon} />}
+              {!!cta && <CtaButtonBox ctaButton={cta} />}
             </motion.div>
           </details>
         </div>
@@ -44,3 +44,5 @@ export default function Faq({ list, PlusIcon, MinusIcon, UserIcon, CartIcon }: F
     </div>
   );
 }
+
+// <Button tabIndex={openIndex === i ? 0 : -1} {...cta} shade='dark' icon={CartIcon} />
