@@ -1,0 +1,15 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  p {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  > svg {
+    padding-top: 1px;
+  }
+}

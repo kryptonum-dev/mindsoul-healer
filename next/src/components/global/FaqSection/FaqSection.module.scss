@@ -73,6 +73,13 @@
         > div:last-of-type {
           max-width: max-content;
         }
+
+        .cta {
+          display: flex;
+          flex-direction: column;
+          min-width: max-content;
+          gap: 12px;
+        }
       }
     }
   }
