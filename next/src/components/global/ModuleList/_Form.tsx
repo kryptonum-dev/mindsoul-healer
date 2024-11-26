@@ -23,8 +23,8 @@ export default function Form({ buttonText, heading, privacyPolicy, index, thumbn
         'Prawdopodobnie jest to jakiś problem z serwerem. Spróbuj ponownie teraz albo poczekaj i spróbuj za 5minut.',
     },
     successState: {
-      heading: 'dzieli Cię już tylko jeden krok od obejrzenia lekcji',
-      paragraph: 'Potwierdź swojego maila i w następnym mailu otrzymaj dostęp do lekcji',
+      heading: 'Dzieli Cię 1 krok od zmiany życia na lepsze.',
+      paragraph: 'Potwierdź swojego maila. W następnym otrzymasz dostęp do lekcji.',
     },
   };
 
@@ -52,7 +52,7 @@ export default function Form({ buttonText, heading, privacyPolicy, index, thumbn
           title='Zwiastun bezpłatnej lekcji'
           videoId={video}
           options={{ muted: true, controls: false }}
-          closeTime={3}
+          closeTime={5}
         >
           <Img sizes='' data={thumbnail} />
         </VideoBox>
