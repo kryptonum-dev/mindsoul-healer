@@ -19,7 +19,8 @@ export default function RootLayout({
         <SchemaOrganization />
         <Toaster richColors position='bottom-center' />
         <CookieConsent />
-        {process.env.NODE_ENV === 'production' && <GoogleTagManager gtmId='GTM-M6FZ4BW6' />}
+        {/* {process.env.NODE_ENV === 'production' && <GoogleTagManager gtmId='GTM-M6FZ4BW6' />} */}
+        <GoogleTagManager gtmId='GTM-M6FZ4BW6' />
       </body>
     </html>
   );
