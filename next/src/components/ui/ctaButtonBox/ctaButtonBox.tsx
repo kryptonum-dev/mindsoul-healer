@@ -4,12 +4,12 @@ import Markdown from '../markdown';
 import styles from './ctaButtonBox.module.scss';
 import type { CtaDataTypes } from './ctaButtonBox.types';
 
-export default function CtaButtonBox({ paragraph, ctaButton, dark = false }: CtaDataTypes) {
+export default function CtaButtonBox({ paragraph, ctaButton, dark = false, easyCartInfo = true }: CtaDataTypes) {
   return (
     <div className={styles.container}>
       {!!paragraph && <Markdown>{paragraph}</Markdown>}
       <Button {...ctaButton} icon={<CartIcon />} shade={dark ? 'light' : 'dark'} />
-      <EasyCartInfo dark={dark} />
+      {easyCartInfo && <EasyCartInfo dark={dark} />}
     </div>
   );
 }

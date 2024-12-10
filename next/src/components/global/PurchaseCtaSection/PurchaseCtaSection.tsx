@@ -19,7 +19,7 @@ export default function PurchaseCtaSection({ image, sectionHeading, paragraph, c
           sizes='(max-width: 659px) 242px, (max-width: 769px) 48vw, (max-width: 1023px) 378px, (max-width: 1103px) 26vw, 278px'
         />
 
-        <CtaButtonBox {...cta} dark />
+        <CtaButtonBox easyCartInfo={cta.ctaButton.easyCartInfo || false} {...cta} dark />
       </div>
     </section>
   );

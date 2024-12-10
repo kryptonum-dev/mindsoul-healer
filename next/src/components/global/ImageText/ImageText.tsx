@@ -6,13 +6,14 @@ import styles from './ImageText.module.scss';
 import type { ImageTextTypes } from './ImageText.types';
 
 export default function ImageText({ sectionHeading, paragraph, image, cta, index }: ImageTextTypes) {
+  console.log(cta);
   return (
     <section className={`${styles['ImageText']} max-width`}>
       <Img data={image} sizes='600px' />
       <header className={styles.header}>
         <Heading {...sectionHeading} hierarchy={index === 0 ? 'h1' : 'h2'} />
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>
-        <CtaButtonBox {...cta} />
+        <CtaButtonBox easyCartInfo={cta.ctaButton.easyCartInfo || false} {...cta} />
       </header>
     </section>
   );
