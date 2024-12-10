@@ -6,6 +6,7 @@ export type ButtonTypes = {
   text?: string | React.ReactNode;
   children?: string | React.ReactNode;
   shade?: 'light' | 'dark' | 'gray';
+  easyCartInfo?: boolean;
   icon?: ReactNode;
 } & React.AnchorHTMLAttributes<HTMLAnchorElement> &
   React.ButtonHTMLAttributes<HTMLButtonElement>;

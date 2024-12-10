@@ -39,6 +39,12 @@ export default defineField({
           return true;
         }).required(),
     }),
+    defineField({
+      name: 'easyCartInfo',
+      type: 'boolean',
+      title: 'Włącz informacje o płatności',
+      initialValue: true,
+    }),
   ],
   preview: {
     select: {
