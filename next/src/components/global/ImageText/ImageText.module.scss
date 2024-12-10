@@ -1,13 +1,12 @@
 .ImageText {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: clamp(320px, calc(500vw / 10.23), 600px) 1fr;
   padding: clamp(64px, calc(144vw / 7.68), 184px) 0 clamp(64px, calc(120vw / 7.68), 144px);
   gap: 48px;
   align-items: center;
 
   img {
     width: 100%;
-    max-width: clamp(320px, calc(500vw / 10.23), 600px);
   }
 
   header {
