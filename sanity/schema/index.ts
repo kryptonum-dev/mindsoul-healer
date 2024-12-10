@@ -5,6 +5,7 @@ import seo from './components/seo';
 import Index_Page from './singleTypes/Index_Page';
 import Lesson_Page from './singleTypes/Lesson_Page';
 import NotFound_Page from './singleTypes/NotFound_Page';
+import ThankYou_Page from './singleTypes/ThankYou_Page';
 import { global } from './singleTypes/global';
 import cta from './ui/cta';
 import fullCtaBox from './ui/fullCtaBox';
@@ -17,6 +18,7 @@ export const schemaTypes = [
   Index_Page,
   NotFound_Page,
   Lesson_Page,
+  ThankYou_Page,
   seo,
   global,
   socialMedia,
