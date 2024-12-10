@@ -8,7 +8,7 @@ import type { ImageTextTypes } from './ImageText.types';
 export default function ImageText({ sectionHeading, paragraph, image, cta, index }: ImageTextTypes) {
   return (
     <section className={`${styles['ImageText']} max-width`}>
-      <Img data={image} sizes='' />
+      <Img data={image} sizes='600px' />
       <header className={styles.header}>
         <Heading {...sectionHeading} hierarchy={index === 0 ? 'h1' : 'h2'} />
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>
