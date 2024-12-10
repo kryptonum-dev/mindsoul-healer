@@ -4,7 +4,6 @@ export type ThankYouPageTypes = {
     ec_product_uuid?: string;
     ec_amount?: number;
     ttclid?: string;
-    epik?: string;
   };
 };
 

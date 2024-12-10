@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import type { AnalyticsTypes } from './page.types';
 
-export default function Analytics({ ec_product, ec_product_uuid, ec_amount, ttclid, epik }: AnalyticsTypes) {
+export default function Analytics({ ec_product, ec_product_uuid, ec_amount, ttclid }: AnalyticsTypes) {
   useEffect(() => {
     if (!ec_product || !ec_product_uuid || !ec_amount) return;
     fetch('/api/server-conversion', {
@@ -16,11 +16,10 @@ export default function Analytics({ ec_product, ec_product_uuid, ec_amount, ttcl
         content_name: ec_product,
         content_price: ec_amount,
         ttclid: ttclid,
-        epik: epik,
       }),
     });
     window.history.replaceState(null, '', window.location.pathname);
-  }, [ec_product, ec_product_uuid, ec_amount, ttclid, epik]);
+  }, [ec_product, ec_product_uuid, ec_amount, ttclid]);
 
   return null;
 }

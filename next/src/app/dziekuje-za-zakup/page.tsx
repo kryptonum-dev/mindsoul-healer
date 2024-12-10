@@ -6,14 +6,14 @@ import Analytics from './Analytics';
 import { ThankYouPageTypes } from './page.types';
 
 export default async function ThankYou({
-  searchParams: { ec_product, ec_product_uuid, ec_amount, ttclid, epik },
+  searchParams: { ec_product, ec_product_uuid, ec_amount, ttclid },
 }: ThankYouPageTypes) {
   const { content } = await query();
 
   return (
     <>
       <main>
-        <Analytics {...{ ec_product, ec_product_uuid, ec_amount, ttclid, epik }} />
+        <Analytics {...{ ec_product, ec_product_uuid, ec_amount, ttclid }} />
         <Components data={content} />
       </main>
       <Footer />

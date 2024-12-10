@@ -23,7 +23,6 @@ export async function POST(request: Request) {
     content_price,
     event_source_url,
     ttclid,
-    epik,
   } = await request.json();
 
   console.log(fbc);
@@ -33,9 +32,6 @@ export async function POST(request: Request) {
   console.log(content_name);
   console.log(content_price);
   console.log(ttclid);
-  console.log(epik);
-
-  const _epik = cookies().get('_epik')?.value || epik;
 
   const referer = event_source_url || request.headers.get('referer');
 
@@ -47,8 +43,7 @@ export async function POST(request: Request) {
     content_name,
     content_price,
     event_source_url,
-    ttclid,
-    epik
+    ttclid
   );
 
   try {
