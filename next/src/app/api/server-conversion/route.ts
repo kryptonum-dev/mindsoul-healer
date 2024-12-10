@@ -30,7 +30,7 @@ export async function POST(request: Request) {
   try {
     if (meta_event_name) {
       await fetch(
-        `https://graph.facebook.com/v20.0/${META_PIXEL_ID}/events?access_token=${process.env.META_CONVERSION_API}`,
+        `https://graph.facebook.com/v21.0/${META_PIXEL_ID}/events?access_token=${process.env.META_CONVERSION_API}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
                   client_user_agent: client_user_agent,
                   ...(email && { em: await hash(email) }),
                   ...(fbc && { fbc: fbc }),
-                  ...(fbp && { fbc: fbp }),
+                  ...(fbp && { fbp: fbp }),
                 },
                 custom_data: {
                   contents: [{ id: content_id, quantity: 1 }],
