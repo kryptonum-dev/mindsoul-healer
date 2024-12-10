@@ -6,7 +6,6 @@ import styles from './ImageText.module.scss';
 import type { ImageTextTypes } from './ImageText.types';
 
 export default function ImageText({ sectionHeading, paragraph, image, cta, index }: ImageTextTypes) {
-  console.log(cta);
   return (
     <section className={`${styles['ImageText']} max-width`}>
       <Img data={image} sizes='600px' />
