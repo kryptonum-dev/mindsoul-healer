@@ -2,6 +2,7 @@ import AboutAuthor from '../schema/components/AboutAuthor';
 import FaqSection from '../schema/components/FaqSection';
 import HeadingWithColumns from '../schema/components/HeadingWithColumns';
 import HeroHeaderVideo from '../schema/components/HeroHeaderVideo';
+import ImageText from '../schema/components/ImageText';
 import ListWithImage from '../schema/components/ListWithImage';
 import ModuleList from '../schema/components/ModuleList';
 import PurchaseCtaSection from '../schema/components/PurchaseCtaSection';
@@ -29,5 +30,6 @@ export default defineType({
     FaqSection,
     QuestionSection,
     VideoEmbedHeading,
+    ImageText,
   ],
 });

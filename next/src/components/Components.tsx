@@ -2,6 +2,7 @@ import AboutAuthor, { AboutAuthorTypes, AboutAuthor_Query } from './global/About
 import FaqSection, { FaqSectionTypes, FaqSection_Query } from './global/FaqSection';
 import HeadingWithColumns, { HeadingWithColumnsTypes, HeadingWithColumns_Query } from './global/HeadingWithColumns';
 import HeroHeaderVideo, { HeroHeaderVideoTypes, HeroHeaderVideo_Query } from './global/HeroHeaderVideo';
+import ImageText, { ImageTextTypes, ImageText_Query } from './global/ImageText';
 import ListWithImage, { ListWithImageTypes, ListWithImage_Query } from './global/ListWithImage';
 import ModuleList, { ModuleListTypes, ModuleList_Query } from './global/ModuleList';
 import PurchaseCtaSection, { PurchaseCtaSectionTypes, PurchaseCtaSection_Query } from './global/PurchaseCtaSection';
@@ -24,6 +25,7 @@ type componentsMapTypes = {
   FaqSection: FaqSectionTypes;
   QuestionSectionTypes: QuestionSectionTypes;
   VideoEmbedHeading: VideoEmbedHeadingTypes;
+  ImageText: ImageTextTypes;
 };
 
 export type ComponentTypes = componentsMapTypes[keyof componentsMapTypes] & { _type: string; index: number };
@@ -45,6 +47,7 @@ export default function Components({ data }: { data: ComponentTypes[] }) {
       FaqSection: <FaqSection {...(item as FaqSectionTypes)} />,
       QuestionSection: <QuestionSection {...(item as QuestionSectionTypes)} />,
       VideoEmbedHeading: <VideoEmbedHeading {...(item as VideoEmbedHeadingTypes)} />,
+      ImageText: <ImageText {...(item as ImageTextTypes)} />,
     };
     const DynamicComponent = componentsMapTypes[componentType];
     if (!DynamicComponent) return null;
@@ -67,5 +70,6 @@ export const Components_Query = /* groq */ `
       ${FaqSection_Query}
       ${QuestionSection_Query}
       ${VideoEmbedHeading_Query}
+      ${ImageText_Query}
     },
   `;

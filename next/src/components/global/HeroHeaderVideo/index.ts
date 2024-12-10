@@ -1,4 +1,3 @@
-import { sectionHeadingQuery } from '@/global/queries';
 import { ImgDataQuery } from '@/components/ui/image';
 import HeroHeaderVideo from './HeroHeaderVideo';
 
